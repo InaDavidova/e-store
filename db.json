@@ -1,0 +1,23 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Baseball hat",
+            "description": "Outdoor Cap New York Yankees Replica Adult Adjustable Baseball Hat, Adult Size ",
+            "imgUrl": "https://m.media-amazon.com/images/I/81bBIDU8BVL._AC_UL1500_.jpg",
+            "category": "clothes"
+        }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "name": "Ina Davidova",
+            "username": "InaD",
+            "password": "asd123"
+        }
+    ],
+    "cart": {
+        "userId": 1,
+        "products": [1]
+    }
+}
