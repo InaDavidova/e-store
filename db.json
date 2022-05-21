@@ -20,12 +20,18 @@
       "email": "pravdo00@gmail.com",
       "password": "pass",
       "id": 2
+    },
+    {
+      "name": "Gab",
+      "email": "gub99@gmail.com",
+      "password": "passpass",
+      "id": 3
     }
   ],
   "cart": {
-    "userId": 1,
-    "products": [
-      1
-    ]
+    "orderId": 0,
+    "userId": "",
+    "products": [],
+    "itemCount": 0
   }
 }
