@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-<<<<<<< HEAD
 import { HomeComponent } from './components/home'
-import { AboutComponent } from './components/about'
 import { DetailsComponent } from './components/details';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
@@ -13,7 +11,6 @@ import { CartCheckoutComponent } from './components/cart-page/cart-checkout/cart
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
   { path: 'details/:id', component: DetailsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
@@ -21,10 +18,6 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent },
   { path: 'checkout', component: CartCheckoutComponent }
 ];
-=======
-
-const routes: Routes = [];
->>>>>>> c3dde7444b4b3c4f736afcc28af9b45149346c50
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
