@@ -3,9 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home'
 import { AboutComponent } from './components/about'
 import { DetailsComponent } from './components/details';
-import { LoginComponent } from './login/login.component';
-import { ProfileComponent } from './profile/profile.component';
-import {SignupComponent} from './signup/signup.component'
+import { LoginComponent } from './components/login/login.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import {SignupComponent} from './components/signup/signup.component'
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
