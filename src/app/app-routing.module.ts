@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+<<<<<<< HEAD
 import { HomeComponent } from './components/home'
 import { AboutComponent } from './components/about'
 import { DetailsComponent } from './components/details';
@@ -20,6 +21,10 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent },
   { path: 'checkout', component: CartCheckoutComponent }
 ];
+=======
+
+const routes: Routes = [];
+>>>>>>> c3dde7444b4b3c4f736afcc28af9b45149346c50
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
