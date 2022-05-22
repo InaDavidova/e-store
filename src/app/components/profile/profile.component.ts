@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
+  showModal = false;
+  toggleModal(){
+    this.showModal = !this.showModal;
+  }
   constructor() { }
 
   ngOnInit(): void {
