@@ -2,10 +2,16 @@
   "products": [
     {
       "id": 1,
-      "name": "Baseball hat",
-      "description": "Outdoor Cap New York Yankees Replica Adult Adjustable Baseball Hat, Adult Size ",
-      "imgUrl": "https://m.media-amazon.com/images/I/81bBIDU8BVL._AC_UL1500_.jpg",
-      "category": "clothes"
+      "model": "Galaxy S10",
+      "manufacturer": "Samsung",
+      "color": "black",
+      "displaySize": "6.1",
+      "battery": "3 400 mAh",
+      "rom": "128 GB",
+      "ram": "8 GB",
+      "priceEuro": "884",
+      "picUrl": "https://cdn.alloallo.media/catalog/product/samsung/galaxy-s/galaxy-s10/galaxy-s10-prism-black.jpg",
+      "camera": "16 MP"
     }
   ],
   "users": [
