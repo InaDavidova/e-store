@@ -13,11 +13,12 @@ import { CartProductComponent } from './components/cart-page/cart-product/cart-p
 import { CartProductItemComponent } from './components/cart-page/cart-product-item/cart-product-item.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent, HomeComponent, LoginComponent, SignupComponent, ProfileComponent, CartComponent,
-    CartCheckoutComponent, CartProductComponent, CartProductItemComponent
+    CartCheckoutComponent, CartProductComponent, CartProductItemComponent, HeaderComponent
   ],
   imports: [
     BrowserModule,
