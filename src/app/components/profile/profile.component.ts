@@ -19,6 +19,8 @@ export class ProfileComponent implements OnInit {
   formValue !: FormGroup;
   profileModelObj : ProfileModel = new ProfileModel();
   profileData !: any;
+  showAdd! : boolean;
+  showUpdate! : boolean;
   constructor(private formbuilder: FormBuilder,
     private api: ApiService) { }
 
@@ -32,6 +34,32 @@ export class ProfileComponent implements OnInit {
     this.getAllData();
   }
 
+    clickAddUser(){
+      this.formValue.reset();
+      this.showAdd = true;
+      this.showUpdate = false;
+    }
+
+  postProfileDetails(){
+    this.profileModelObj.name = this.formValue.value.name;
+    this.profileModelObj.email = this.formValue.value.email;
+    this.profileModelObj.password = this.formValue.value.password;
+
+    this.api.postProfile(this.profileModelObj)
+    .subscribe(res=>{
+      console.log(res)
+      alert("Added new user");
+      let ref = document.getElementById('cancel');
+      ref?.click();
+      this.formValue.reset();
+      this.getAllData();
+    },
+    err=>{
+      alert('sth is wrong')
+    }
+    )
+  }
+
  getAllData(){
     this.api.getProfile()
     .subscribe(res=>{
@@ -39,10 +67,23 @@ export class ProfileComponent implements OnInit {
     })
   }
 
+  deleteProfileDetails(row: any){
+    this.api.deleteProfile(row.id)
+    .subscribe(res=>{
+      alert("Deleted User");
+      this.getAllData();
+    },
+    err=>{
+      alert('sth is wrong')
+    })
+  }
+
   onEdit(row: any){
+    this.showAdd = false;
+    this.showUpdate = true;
     this.profileModelObj.id = row.id;
     this.formValue.controls['name'].setValue(row.name);
-    this.formValue.controls['emil'].setValue(row.email);
+    this.formValue.controls['email'].setValue(row.email);
     this.formValue.controls['password'].setValue(row.password);
   }
 
@@ -56,6 +97,10 @@ export class ProfileComponent implements OnInit {
       let ref = document.getElementById('cancel')
       ref?.click();
       this.formValue.reset();
+      this.getAllData();
+    },
+    err=>{
+      alert('sth is wrong')
     })
   }
 }
