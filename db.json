@@ -16,15 +16,17 @@
       "password": "asd123"
     },
     {
-      "name": "firstuserr",
+      "name": "Pravdo",
       "email": "pravdo00@gmail.com",
       "password": "pass",
       "id": 2
     },
     {
+
       "name": "Gab",
       "email": "gub99@gmail.com",
       "password": "passpass",
+
       "id": 3
     }
   ],
