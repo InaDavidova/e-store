@@ -22,12 +22,16 @@
       "id": 2
     },
     {
-
       "name": "Gab",
       "email": "gub99@gmail.com",
       "password": "passpass",
-
       "id": 3
+    },
+    {
+      "id": 4,
+      "name": "Ivan",
+      "email": "iv@gmail.com",
+      "password": "fourth"
     }
   ],
   "cart": {
