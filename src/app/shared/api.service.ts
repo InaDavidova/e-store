@@ -24,14 +24,14 @@ export class ApiService {
   }
 
   updateProfile(data :any, id:number){
-    return this.http.put<any>('http://localhost:3000/users'+id, data)
+    return this.http.put<any>('http://localhost:3000/users/'+id, data)
     .pipe(map((res:any)=>{
       return res;
     }))
   }
 
   deleteProfile(id:number){
-    return this.http.delete<any>('http://localhost:3000/users'+id)
+    return this.http.delete<any>('http://localhost:3000/users/'+id)
     .pipe(map((res:any)=>{
       return res;
     }))
