@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
        
       });
      
-      if(user){
+      if(user.id == 1 || user.id == 2 || user.id == 3){
        this.isLoading = false;
         alert('login success');
         this.loginForm.reset();
