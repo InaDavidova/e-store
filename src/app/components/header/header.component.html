@@ -1,47 +1,54 @@
-<header class="relative w-full h-24 bg-gradient-to-r from-indigo-600 to-blue-500 ">
-    <h1 class=" float-left w-64 font-mono font-bold text-gray-200 text-5xl p-3 mt-2 drop-shadow-2xl ">
-      e-store</h1>
+<header class="relative flex items-start w-full h-22 justify-around bg-gradient-to-r from-indigo-600 to-blue-500">
+  <a routerLink="/home">
+    <h1 class="w-64 font-sans italic font-semibold text-gray-200 text-5xl p-3 mt-2 drop-shadow-2xl">
+      E-STORE
+    </h1>
+  </a>
 
-    <button
-      routerLink="/cart"
-      class=" drop-shadow-2xl float-right mr-5 mt-6 relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
-      <span
-        class="text-[20px] relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-        <i class="fa fa-shopping-cart"></i>
-      </span>
-      <div class="absolute text-sm ml-1 mt-4 left-0 px-1 bg-red-500 rounded-full">2</div>
-
-    </button>
-
-    <div class="border-l-[3px] border-indigo-700 h-24 float-right mr-5"></div>
-
-    <button type="button"
-    routerLink="/signup"
-      class="mr-6 mt-6 relative float-right text-white bg-indigo-700 hover:bg-indogo-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
-      Sign Up</button>
-
-    <button type="button"
-    routerLink="/login"
-      class="mr-6 mt-6 relative float-right text-white bg-indigo-700 hover:bg-indogo-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
-      Log In</button>
-
-    <form class="w-[50%] m-5 float-right">
-      <label for="default-search" class="float-right mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">
-        Search</label>
-      <div class="relative">
-        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-          <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-          </svg>
-        </div>
-        <input type="search" id="default-search"
-          class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-indigo-300 focus:ring-indigo-500 focus:border-indigo-500 dark:bg-indigo-700 dark:border-indigo-600 dark:placeholder-indigo-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500"
-          placeholder="Search for products..." required>
-        <button type="submit"
-          class="text-white absolute right-2.5 bottom-2.5 bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800">
-          Search</button>
+  <form class="w-[45%] m-5">
+    <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">
+      Search</label>
+    <div class="relative">
+      <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+        <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
       </div>
-    </form>
-  </header>
+      <input type="search" id="default-search"
+        class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-indigo-300 focus:ring-indigo-500 focus:border-indigo-500 dark:bg-indigo-700 dark:border-indigo-600 dark:placeholder-indigo-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500"
+        placeholder="Search for products..." required>
+      <button type="submit"
+        class="text-white absolute right-2.5 bottom-2.5 bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800">
+        Search
+      </button>
+    </div>
+  </form>
+
+  <button type="button" routerLink="/login"
+    class="mr-6 mt-6 relative text-white bg-indigo-700 hover:bg-indigo-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
+    Log In
+  </button>
+
+  <button type="button" routerLink="/signup"
+    class="mr-6 mt-6 relative  text-white bg-indigo-700 hover:bg-indigo-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
+    Sign Up
+  </button>
+
+  <div class="border-l-[3px] border-indigo-700 h-24 mr-5"></div>
+
+  <button routerLink="/cart"
+    class=" drop-shadow-2xl mr-5 mt-6 relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+    <span
+      class="text-[20px] relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+      <i class="fa fa-shopping-cart"></i>
+    </span>
+    <div class="absolute text-sm ml-1 mt-4 left-0 px-1 bg-red-500 rounded-full">2</div>
+
+  </button>
+
+
+
+
+</header>

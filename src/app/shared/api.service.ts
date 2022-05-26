@@ -2,6 +2,22 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
+export type TList = TProduct[];
+
+export type TProduct = {
+    id: number,
+    model: string,
+    manufacturer: string,
+    color: string,
+    displaySize: string,
+    battery: string,
+    rom: string,
+    ram: string,
+    priceEuro: number,
+    picUrl: string,
+    camera: string
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -35,5 +51,13 @@ export class ApiService {
     .pipe(map((res:any)=>{
       return res;
     }))
+  }
+
+  getAllProducts() {
+    return this.http.get('http://localhost:3000/products');
+  }
+
+  getProductByID(id:number) {
+    return this.http.get(`http://localhost:3000/products/${id}`);
   }
 }
