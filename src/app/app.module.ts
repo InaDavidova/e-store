@@ -14,11 +14,13 @@ import { CartProductItemComponent } from './components/cart-page/cart-product-it
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.componnet';
 
 @NgModule({
   declarations: [
     AppComponent, HomeComponent, LoginComponent, SignupComponent, ProfileComponent, CartComponent,
-    CartCheckoutComponent, CartProductComponent, CartProductItemComponent, HeaderComponent
+    CartCheckoutComponent, CartProductComponent, CartProductItemComponent, HeaderComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
