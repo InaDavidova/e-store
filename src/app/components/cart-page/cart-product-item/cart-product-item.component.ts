@@ -13,5 +13,15 @@ export class CartProductItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  countVal = 1;
+
+  addCount(){
+    if (this.countVal < 20)
+    this.countVal += 1
+  }
+  subCount(){
+    if (this.countVal >= 0)
+    this.countVal -= 1
+  }
 
 }
