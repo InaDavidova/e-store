@@ -18,7 +18,8 @@ export class SignupComponent implements OnInit {
     this.signupForm = this.formBuilder.group({
       name:[""],
       email:[""],
-      password:[""]
+      password:[""],
+     // position:[""]
     })
   }
   signUp(){
