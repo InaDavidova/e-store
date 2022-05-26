@@ -73,10 +73,11 @@
       "id": 3
     }
   ],
-  "cart": [
+  "checkout": [
     {
       "orderId": 0,
-      "userId": 0,
+      "user": "",
+      "items": "",
       "itemCount": 0,
       "price" : 0
     }
