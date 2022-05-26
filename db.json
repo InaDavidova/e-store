@@ -73,10 +73,12 @@
       "id": 3
     }
   ],
-  "cart": {
-    "orderId": 0,
-    "userId": "",
-    "products": [],
-    "itemCount": 0
-  }
+  "cart": [
+    {
+      "orderId": 0,
+      "userId": 0,
+      "itemCount": 0,
+      "price" : 0
+    }
+  ]
 }
