@@ -11,11 +11,8 @@ export class PhoneCardComponent implements OnInit {
 
   @Input() data!:TProduct;
 
-  constructor() {}
-
   ngOnInit(): void {
     console.log(this.data);
     
   }
-
 }

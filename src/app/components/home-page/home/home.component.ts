@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
     this.api.getAllProducts()
     // @ts-ignore
     .subscribe((data:TList) => {
-      this.list = data
+      this.list = data;
     })
   }
 

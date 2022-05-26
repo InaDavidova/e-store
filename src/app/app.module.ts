@@ -16,13 +16,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.componnet';
 import { PhoneCardComponent } from './components/home-page/phone-card/phone-card.component';
+import { DetailsComponent } from './components/details-page/details/details.component';
 
 @NgModule({
   declarations: [
     AppComponent, HomeComponent, LoginComponent, SignupComponent, ProfileComponent, CartComponent,
     CartCheckoutComponent, CartProductComponent, CartProductItemComponent, HeaderComponent,
     LoadingSpinnerComponent,
-    PhoneCardComponent
+    PhoneCardComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
