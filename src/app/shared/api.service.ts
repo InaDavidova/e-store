@@ -19,45 +19,63 @@ export type TProduct = {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http : HttpClient) { }
-
-  postProfile(data: any){
-    return this.http.post<any>('http://localhost:3000/users', data)
-    .pipe(map((res:any)=>{
-      return res;
-    }))
+  postProfile(data: any) {
+    return this.http.post<any>('http://localhost:3000/users', data).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
   }
 
-  getProfile(){
-    return this.http.get<any>('http://localhost:3000/users')
-    .pipe(map((res:any)=>{
-      return res;
-    }))
+  getProfile() {
+    return this.http.get<any>('http://localhost:3000/users').pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
   }
 
-  updateProfile(data :any, id:number){
-    return this.http.put<any>('http://localhost:3000/users/'+id, data)
-    .pipe(map((res:any)=>{
-      return res;
-    }))
+  updateProfile(data: any, id: number) {
+    return this.http.put<any>('http://localhost:3000/users/' + id, data).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
   }
 
-  deleteProfile(id:number){
-    return this.http.delete<any>('http://localhost:3000/users/'+id)
-    .pipe(map((res:any)=>{
-      return res;
-    }))
+  deleteProfile(id: number) {
+    return this.http.delete<any>('http://localhost:3000/users/' + id).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
   }
 
   getAllProducts() {
     return this.http.get('http://localhost:3000/products');
   }
 
-  getProductByID(id:number) {
+  getProductByID(id: number) {
     return this.http.get(`http://localhost:3000/products/${id}`);
   }
+
+  getAllBrands(): Set<string> {
+    const brands: Set<string> = new Set();
+
+    this.getAllProducts()
+      // @ts-ignore
+      .subscribe((data: TList) => {
+        data.map((el) => {
+          brands.add(el.manufacturer);
+        });
+      });
+
+    return brands;
+  }
+  
 }

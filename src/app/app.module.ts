@@ -17,6 +17,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.componnet';
 import { PhoneCardComponent } from './components/home-page/phone-card/phone-card.component';
 import { DetailsComponent } from './components/details-page/details/details.component';
+import { FilterMenuComponent } from './components/home-page/filter-menu/filter-menu.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DetailsComponent } from './components/details-page/details/details.comp
     CartCheckoutComponent, CartProductComponent, CartProductItemComponent, HeaderComponent,
     LoadingSpinnerComponent,
     PhoneCardComponent,
-    DetailsComponent
+    DetailsComponent,
+    FilterMenuComponent
   ],
   imports: [
     BrowserModule,

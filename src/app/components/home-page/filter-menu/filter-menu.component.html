@@ -1,0 +1,22 @@
+<form>
+  <label for="search">Search</label>
+  <input type="text" name="search" id="search" />
+
+  <div id="divCat">
+
+    <p>Manufacturer</p>
+    <label *ngFor="let brand of brands">{{brand}} 
+        <input type="checkbox" name="{{brand | lowercase}}" />
+    </label>
+
+  </div>
+
+  <div>
+    <label for="from">Price from</label>
+    <input type="number" name="priceFrom" id="from" />
+    <label for="to">to</label>
+    <input type="number" name="priceTo" id="to" />
+  </div>
+
+  <button>Filter</button>
+</form>

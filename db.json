@@ -51,6 +51,19 @@
       "priceEuro": 889,
       "picUrl": "https://www.a1.bg/public/file/id/1d5ae20d6b393f0bfbc32ff4420c0e29/p50-pro-black.png",
       "camera": "50 MP"
+    },
+    {
+      "id": 5,
+      "model": "Galaxy Note 20",
+      "manufacturer": "Samsung",
+      "color": "blue",
+      "displaySize": "6.7",
+      "battery": "4 300 mAh",
+      "rom": "256 GB",
+      "ram": "8 GB",
+      "priceEuro": 1260,
+      "picUrl": "https://domarket.com.ng/wp-content/uploads/2020/10/Samsung393117Pic11.jpg",
+      "camera": "64 MP"
     }
   ],
   "users": [

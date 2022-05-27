@@ -7,12 +7,8 @@ import { TProduct } from 'src/app/shared/api.service';
   styleUrls: ['./phone-card.component.css']
 })
 
-export class PhoneCardComponent implements OnInit {
+export class PhoneCardComponent{
 
   @Input() data!:TProduct;
 
-  ngOnInit(): void {
-    console.log(this.data);
-    
-  }
 }
