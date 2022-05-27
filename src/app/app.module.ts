@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.componnet';
+import { CreateUserCanDeactivateGuardService} from './components/signup/create-user-can-deactivate-guard.service'
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [CreateUserCanDeactivateGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

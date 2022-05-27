@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormGroup, FormBuilder, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 
@@ -10,6 +10,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+
+  @ViewChild('userFrom')
+  public createUserForm: NgForm | undefined;
 
   public signupForm !: FormGroup;
   constructor(private formBuilder : FormBuilder, private http : HttpClient, private router: Router) { }
