@@ -30,7 +30,10 @@ export class LoginComponent implements OnInit {
        
       });
      
-      if(user.id == 1 || user.id == 2 || user.id == 3){
+    //  if(user.id == 1 || user.id == 2 || user.id == 3){
+      //.position === "admin")
+      if (user) {
+
        this.isLoading = false;
         alert('login success');
         this.loginForm.reset();

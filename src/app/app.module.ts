@@ -18,6 +18,7 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
 import { PhoneCardComponent } from './components/home-page/phone-card/phone-card.component';
 import { DetailsComponent } from './components/details-page/details/details.component';
 import { FilterMenuComponent } from './components/home-page/filter-menu/filter-menu.component';
+import { CreateUserCanDeactivateGuardService} from './components/signup/create-user-can-deactivate-guard.service'
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { FilterMenuComponent } from './components/home-page/filter-menu/filter-m
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [CreateUserCanDeactivateGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -71,19 +71,29 @@
       "id": 1,
       "name": "Ina Davidova",
       "email": "InaD@gmail.com",
-      "password": "asd123"
+      "password": "asd123",
+      "position": "admin"
     },
     {
       "id": 2,
       "name": "Pravdo",
       "email": "pravdo00@gmail.com",
-      "password": "pass1"
+      "password": "pass1",
+      "position": "admin"
     },
     {
       "name": "Gab",
       "email": "gub99@gmail.com",
       "password": "passpass",
-      "id": 3
+      "id": 3,
+      "position": "admin"
+    },
+    {
+      "id": 4,
+      "name": "ivan",
+      "email": "iv@gmail.com",
+      "password": "pass4",
+      "position": "user"
     }
   ],
   "cart": {
