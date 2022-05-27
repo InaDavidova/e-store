@@ -105,4 +105,13 @@ export class ProfileComponent implements OnInit {
       alert('sth is wrong')
     })
   }
+
+  removeItem(){
+    localStorage.removeItem('loginForm');
+  }
+
+  // removeAll(){
+ //   localStorage.clear();
+  //}
+
 }
