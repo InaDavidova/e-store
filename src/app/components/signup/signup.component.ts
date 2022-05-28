@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { RegisterValidators } from '../validators/register-validators';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
 
-  @ViewChild('userFrom')
+  @ViewChild('userFrom') 
   public createUserForm: NgForm | undefined;
 
   public signupForm !: FormGroup;
@@ -22,8 +23,9 @@ export class SignupComponent implements OnInit {
       name:[""],
       email:[""],
       password:[""],
+      confirmPassword:['']
      // position:[""]
-    })
+    }, [RegisterValidators.match])
   }
   signUp(){
     this.http.post<any>("http://localhost:3000/users", this.signupForm.value)
