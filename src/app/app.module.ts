@@ -19,6 +19,7 @@ import { PhoneCardComponent } from './components/home-page/phone-card/phone-card
 import { DetailsComponent } from './components/details-page/details/details.component';
 import { FilterMenuComponent } from './components/home-page/filter-menu/filter-menu.component';
 import { CreateUserCanDeactivateGuardService} from './components/signup/create-user-can-deactivate-guard.service'
+//import { ConfirmValidatorDirective } from './shared/confirm-validator.direvtive';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { CreateUserCanDeactivateGuardService} from './components/signup/create-u
     LoadingSpinnerComponent,
     PhoneCardComponent,
     DetailsComponent,
-    FilterMenuComponent
+    FilterMenuComponent //ConfirmValidatorDirective
   ],
   imports: [
     BrowserModule,
