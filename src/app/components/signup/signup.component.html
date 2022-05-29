@@ -1,17 +1,17 @@
-<div class="container">
-    <div class="card">
+<div class="container mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+    <div class="card  bg-slate-200 py-3.5 px-15 shadow rounded-lg sm:px-10 "> <!--grid items-center justify-center p-10 rounded-md -->
       <div class="text-center">
-      <h1>Sign Up</h1>
-      <h4>Please, register</h4>
+      <h1 class="font-bold">Sign Up</h1>
+      <h4 class="italic">Please, register</h4>
       </div>
       <form action="">
           <form [formGroup]="signupForm" #userFrom="ngForm" (ngSubmit)="signUp()">
             <div class="mb-6">
-                <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Name</label>
+                <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-900">Name</label>
                 <input formControlName="name" type="text" id="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
               </div>
               <div class="mb-6">
-                <label for="email"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your email</label>
+                <label for="email"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-900">Your email</label>
                 <input formControlName="email" ngModel type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
                 placeholder="name@flowbite.com" required email
                 #email="ngForm" 
@@ -24,20 +24,20 @@
           
               </div>
               <div class="mb-6">
-                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your password</label>
+                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-900">Your password</label>
                 <input formControlName="password" type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
               </div>
               <div class="mb-6">
-                <label for="confirmPassword" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Confirm your password</label>
+                <label for="confirmPassword" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-900">Confirm your password</label>
                 <input appConfirmValidator="password"  type="confirmPassword" id="confirmPassword" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
                <!-- [control]="confirmPassword" -->
                 <span class="help-block" >
                  <!--Passwords dont match--> 
                 </span>
               </div>
-              <button type="submit" [disabled]="!userFrom.valid" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Sign up</button>
+              <button type="submit" [disabled]="!userFrom.valid" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mb-6 ">Sign up</button>
             </form>
-            <a routerLink="/login">You have an account? Then just log in 😏</a>
+            <a routerLink="/login" class="relative text-white bg-indigo-700 hover:bg-indigo-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 ml-11  text-center  dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 ">You have an account? Then just log in 😏</a>
       </form>
     </div>
   </div>
