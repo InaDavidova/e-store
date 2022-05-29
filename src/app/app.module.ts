@@ -18,7 +18,8 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
 import { PhoneCardComponent } from './components/home-page/phone-card/phone-card.component';
 import { DetailsComponent } from './components/details-page/details/details.component';
 import { FilterMenuComponent } from './components/home-page/filter-menu/filter-menu.component';
-import { CreateUserCanDeactivateGuardService} from './components/signup/create-user-can-deactivate-guard.service'
+import { CreateUserCanDeactivateGuardService} from './components/signup/create-user-can-deactivate-guard.service';
+import { FooterComponent } from './components/footer/footer.component'
 //import { ConfirmValidatorDirective } from './shared/confirm-validator.direvtive';
 
 @NgModule({
@@ -28,7 +29,8 @@ import { CreateUserCanDeactivateGuardService} from './components/signup/create-u
     LoadingSpinnerComponent,
     PhoneCardComponent,
     DetailsComponent,
-    FilterMenuComponent //ConfirmValidatorDirective
+    FilterMenuComponent,
+    FooterComponent //ConfirmValidatorDirective
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import { map, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -21,8 +21,19 @@ export class CartService {
     }))
   }
 
+  getProducts(): Observable<any[]> {
+    return of(this.cartItemList);
+}
+
+  getCount(){
+    return this.cartItemList.length
+  }
+
   addToCart(product: any){
-    return this.cartItemList.push(product)
+    this.cartItemList.push(product)
+    alert("item added to list (not really tho)")
+    console.log(this.cartItemList);
+    
   }
 
   getTotalPrice(){
@@ -30,6 +41,7 @@ export class CartService {
     this.cartItemList.map((a: any) => {
       totalPrice += a.total
     })
+    return totalPrice
   }
 
   deleteCartItem(product : any){

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CartService } from 'src/app/shared/cart.service';
 
 @Component({
@@ -8,9 +8,18 @@ import { CartService } from 'src/app/shared/cart.service';
 })
 export class CartProductItemComponent implements OnInit {
 
-  constructor() { }
+  constructor(private cart: CartService) { }
+
+  public cartList: any = this.cart.getProducts()
+  
+  @Input() data!:any;
+  
 
   ngOnInit(): void {
+  }
+
+  onDelete(product: any){
+    this.cart.deleteCartItem(product)
   }
 
   countVal = 1;
