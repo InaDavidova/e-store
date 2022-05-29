@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,14 +12,27 @@ export class LoginComponent implements OnInit {
 
   isLoading = false;
 
+  myform!: any;
+
   public loginForm!: FormGroup
   constructor(private formBuilder : FormBuilder, private http : HttpClient, private router: Router) { }
 
   ngOnInit(): void {
-    this.loginForm = this.formBuilder.group({
-      email:[""],
-      password:[""]
-    })
+
+ //  localStorage.setItem("id", "num");
+
+ //  this.loginForm = this.formBuilder.group({
+   //   email:[""],
+  //    password:[""]
+  //  })
+
+    this.loginForm = new FormGroup({
+      email: new FormControl(''),
+      password: new FormControl('')
+    });
+
+  
+
   }
   login(){
     this.isLoading = true;
@@ -30,11 +43,16 @@ export class LoginComponent implements OnInit {
        
       });
      
-      if(user.id == 1 || user.id == 2 || user.id == 3){
+    //  if(user.id == 1 || user.id == 2 || user.id == 3){
+      //.position === "admin")
+      if (user) {
+
        this.isLoading = false;
         alert('login success');
+        localStorage.setItem("loginForm",JSON.stringify(this.loginForm.value));
         this.loginForm.reset();
-        this.router.navigate(['profile'])
+        this.router.navigate(['profile']);
+       
       } else{
         this.isLoading = false;
         alert('user not found');

@@ -1,0 +1,59 @@
+<main class="px-20 py-7 min-h-screen flex items-center justify-center">
+    <div class="flex flex-col items-center">
+        <h1 class="text-3xl font-bold text-orange-700">{{product.manufacturer}} {{product.model}}</h1>
+        <img class="max-h-96 py-7"
+        src="{{product.picUrl}}" alt="product's photo">
+        <button class="relative w-3/4 inline-block px-8 py-3 border-2 border-orange-600 group focus:outline-none focus:ring">
+            <span class="absolute inset-y-0 left-0 w-[2px] transition-all bg-orange-600 group-hover:w-full group-active:bg-orange-500"></span>
+          
+            <span class="relative text-xl font-bold text-orange-700 transition-colors group-hover:text-white">
+              Add to chart
+            </span>
+        </button>
+    </div>
+
+    <table class="ml-7 bg-cyan-50 max-h-96 w-1/2 text-left indent-8 border-2">
+        <tbody class="border">
+
+            <tr>
+                <th>Manufacturer</th>
+                <td>{{product.manufacturer}}</td>
+            </tr>
+            <tr>
+                <th>Model</th>
+                <td>{{product.model}}</td>
+            </tr>
+            <tr>
+                <th>Color</th>
+                <td>{{product.color}}</td>
+            </tr>
+            <tr>
+                <th>Display</th>
+                <td>{{product.displaySize}}"</td>
+            </tr>
+            <tr>
+                <th>Rom</th>
+                <td>{{product.rom}}</td>
+            </tr>
+            <tr>
+                <th>Ram</th>
+                <td>{{product.ram}}</td>
+            </tr>
+            <tr>
+                <th>Battery</th>
+                <td>{{product.battery}}</td>
+            </tr>
+            <tr>
+                <th>Camera</th>
+                <td>{{product.camera}}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr class="bg-indigo-900 text-white">
+                <th>Price</th>
+                <td>€ {{product.priceEuro}}</td>
+            </tr>
+        </tfoot>
+    </table>
+
+</main>

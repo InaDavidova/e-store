@@ -9,7 +9,7 @@
       "battery": "3 400 mAh",
       "rom": "128 GB",
       "ram": "8 GB",
-      "priceEuro": "884",
+      "priceEuro": 884,
       "picUrl": "https://cdn.alloallo.media/catalog/product/samsung/galaxy-s/galaxy-s10/galaxy-s10-prism-black.jpg",
       "camera": "16 MP"
     },
@@ -22,7 +22,7 @@
       "battery": "4 614 mAh",
       "rom": "128 GB",
       "ram": "8 GB",
-      "priceEuro": "579",
+      "priceEuro": 579,
       "picUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZBBZ7wmP6lzGx6v473GqqgFjAUbSjh1EQ5GQAAwuSQMUj129cBs0NM7B-AvlvcP4YklU&usqp=CAU",
       "camera": "50 MP"
     },
@@ -35,7 +35,7 @@
       "battery": "3 240 mAh",
       "rom": "128 GB",
       "ram": "4 GB",
-      "priceEuro": "819",
+      "priceEuro": 819,
       "picUrl": "https://s13emagst.akamaized.net/products/40685/40684413/images/res_16a3a662e1b74dd715c857686c585cd7.jpg",
       "camera": "12 MP"
     },
@@ -48,9 +48,22 @@
       "battery": "4 360 mAh",
       "rom": "128 GB",
       "ram": "8 GB",
-      "priceEuro": "889",
+      "priceEuro": 889,
       "picUrl": "https://www.a1.bg/public/file/id/1d5ae20d6b393f0bfbc32ff4420c0e29/p50-pro-black.png",
       "camera": "50 MP"
+    },
+    {
+      "id": 5,
+      "model": "Galaxy Note 20",
+      "manufacturer": "Samsung",
+      "color": "blue",
+      "displaySize": "6.7",
+      "battery": "4 300 mAh",
+      "rom": "256 GB",
+      "ram": "8 GB",
+      "priceEuro": 1260,
+      "picUrl": "https://domarket.com.ng/wp-content/uploads/2020/10/Samsung393117Pic11.jpg",
+      "camera": "64 MP"
     }
   ],
   "users": [
@@ -58,19 +71,29 @@
       "id": 1,
       "name": "Ina Davidova",
       "email": "InaD@gmail.com",
-      "password": "asd123"
+      "password": "asd123",
+      "position": "admin"
     },
     {
       "id": 2,
       "name": "Pravdo",
       "email": "pravdo00@gmail.com",
-      "password": "pass1"
+      "password": "pass1",
+      "position": "admin"
     },
     {
       "name": "Gab",
       "email": "gub99@gmail.com",
       "password": "passpass",
-      "id": 3
+      "id": 3,
+      "position": "admin"
+    },
+    {
+      "id": 4,
+      "name": "ivan",
+      "email": "iva@gmail.com",
+      "password": "pass4",
+      "position": "user"
     }
   ],
   "checkout": [

@@ -28,8 +28,8 @@ export class ProfileComponent implements OnInit {
     this.formValue = this.formbuilder.group({
       name : [''],
       email : [''],
-      password : ['']
-
+      password : [''],
+      position : ['']
     })
     this.getAllData();
   }
@@ -44,7 +44,7 @@ export class ProfileComponent implements OnInit {
     this.profileModelObj.name = this.formValue.value.name;
     this.profileModelObj.email = this.formValue.value.email;
     this.profileModelObj.password = this.formValue.value.password;
-
+    this.profileModelObj.position = this.formValue.value.position;
     this.api.postProfile(this.profileModelObj)
     .subscribe(res=>{
       console.log(res)
@@ -85,12 +85,14 @@ export class ProfileComponent implements OnInit {
     this.formValue.controls['name'].setValue(row.name);
     this.formValue.controls['email'].setValue(row.email);
     this.formValue.controls['password'].setValue(row.password);
+    this.formValue.controls['position'].setValue(row.position);
   }
 
   updateProfileDetails(){
     this.profileModelObj.name = this.formValue.value.name;
     this.profileModelObj.email = this.formValue.value.email;
     this.profileModelObj.password = this.formValue.value.password;
+    this.profileModelObj.position = this.formValue.value.position;
     this.api.updateProfile(this.profileModelObj, this.profileModelObj.id)
     .subscribe(res=>{
       alert('updated');
@@ -103,4 +105,13 @@ export class ProfileComponent implements OnInit {
       alert('sth is wrong')
     })
   }
+
+  removeItem(){
+    localStorage.removeItem('loginForm');
+  }
+
+  // removeAll(){
+ //   localStorage.clear();
+  //}
+
 }
