@@ -96,10 +96,13 @@
       "position": "user"
     }
   ],
-  "cart": {
-    "orderId": 0,
-    "userId": "",
-    "products": [],
-    "itemCount": 0
-  }
+  "checkout": [
+    {
+      "orderId": 0,
+      "user": "",
+      "items": "",
+      "itemCount": 0,
+      "price" : 0
+    }
+  ]
 }

@@ -3,11 +3,14 @@
         <h1 class="text-3xl font-bold text-orange-700">{{product.manufacturer}} {{product.model}}</h1>
         <img class="max-h-96 py-7"
         src="{{product.picUrl}}" alt="product's photo">
-        <button class="relative w-3/4 inline-block px-8 py-3 border-2 border-orange-600 group focus:outline-none focus:ring">
-            <span class="absolute inset-y-0 left-0 w-[2px] transition-all bg-orange-600 group-hover:w-full group-active:bg-orange-500"></span>
-          
+        <button
+        (click)="addProduct(product)"
+        class="relative w-3/4 inline-block px-8 py-3 border-2 border-orange-600 group focus:outline-none focus:ring">
+            <span class="absolute inset-y-0 left-0 w-[2px] transition-all bg-orange-600 group-hover:w-full group-active:bg-orange-500">
+
+            </span>
             <span class="relative text-xl font-bold text-orange-700 transition-colors group-hover:text-white">
-              Add to chart
+              Add to cart
             </span>
         </button>
     </div>
