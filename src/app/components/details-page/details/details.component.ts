@@ -23,7 +23,7 @@ export class DetailsComponent implements OnInit {
     })
   }
 
-  addProduct(product: any){
+  addProduct(product: TProduct){
     this.cart.addToCart(product)
   }
 }

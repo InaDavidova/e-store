@@ -8,29 +8,35 @@ import { CartService } from 'src/app/shared/cart.service';
 })
 export class CartProductItemComponent implements OnInit {
 
-  constructor(private cart: CartService) { }
+  constructor(private cart: CartService) {
 
-  public cartList: any = this.cart.getProducts()
-  
-  @Input() data!:any;
-  
+  }
+
+  //public cartList: any = this.cart.getProducts()
+
+  @Input() data!: any;
+
 
   ngOnInit(): void {
   }
 
-  onDelete(product: any){
+  onDelete(product: any) {
     this.cart.deleteCartItem(product)
+  }
+
+  isEmpty() {
+    this.cart.isEmpty()
   }
 
   countVal = 1;
 
-  addCount(){
+  addCount() {
     if (this.countVal < 20)
-    this.countVal += 1
+      this.countVal += 1
   }
-  subCount(){
-    if (this.countVal >= 0)
-    this.countVal -= 1
+  subCount() {
+    if (this.countVal >= 1)
+      this.countVal -= 1
   }
 
 }

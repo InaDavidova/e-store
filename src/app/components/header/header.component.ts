@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CartService } from 'src/app/shared/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +9,15 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public router: Router) { }
+  list : any = []
+  public totalItems: number = 0;
+  constructor(public router: Router, private cart: CartService) { }
 
   ngOnInit(): void {
+    this.cart.cartItems.subscribe((d: string | any[]) => {
+      this.totalItems = d.length
+    })
+    
   }
 
 }

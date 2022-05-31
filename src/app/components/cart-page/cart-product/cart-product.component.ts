@@ -9,14 +9,16 @@ import { CartService } from 'src/app/shared/cart.service';
 export class CartProductComponent implements OnInit {
   list: any = []
 
-
   constructor(private cart: CartService) { }
 
   ngOnInit(): void {
-    this.cart.getProducts()
-      .subscribe((data: any) => {
-        this.list = data;
-      });
+    // this.cart.getProducts()
+    //   .subscribe((data: any) => {
+    //     this.list = data;
+    //   });
+
+    this.list = this.cart.placeholder
+    
   }
 
 }

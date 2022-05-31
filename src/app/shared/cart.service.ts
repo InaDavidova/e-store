@@ -1,60 +1,75 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
+import { TProduct } from './api.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  public cartItemList : any = []  
+  public placeholder: any = this.getCartData()
+  public cartItems = new BehaviorSubject([])
 
-  constructor(private http : HttpClient) {  
+  constructor() { 
+    const ls = this.getCartData()
+    if (ls) this.cartItems.next(ls)
+    //this.placeholder = ls;
   }
 
-  //GET user?
+  addToCart(product: TProduct) {
+    const ls = this.getCartData()
 
-  getProduct(id: number){
-    return this.http.get<any>('http://localhost:3000/products/'+ id)
-    .pipe(map((res:any)=>{
-      return res;
-    }))
+    const products = ls.filter((p: any) => p.id != product.id)
+
+    const newData = [...products, product]
+    this.setCartData(newData)
+    this.cartItems.next(this.getCartData())
+    this.placeholder.push(product)
+  }
+
+  setCartData(data: any) {
+    localStorage.setItem('cart', JSON.stringify(data))
+  }
+
+  getCartData() {
+    return JSON.parse(localStorage.getItem('cart') || '[]')
   }
 
   getProducts(): Observable<any[]> {
-    return of(this.cartItemList);
-}
-
-  getCount(){
-    return this.cartItemList.length
+    return of(this.getCartData());
   }
 
-  addToCart(product: any){
-    this.cartItemList.push(product)
-    alert("item added to list (not really tho)")
-    console.log(this.cartItemList);
-    
+  getCount() {
+    return this.placeholder.length
   }
 
-  getTotalPrice(){
+  isEmpty(){
+    let empty = false;
+    if (this.placeholder.length == 0)
+      empty = true
+    return empty
+  }
+
+  getTotalPrice() {
     let totalPrice = 0
-    this.cartItemList.map((a: any) => {
+    this.placeholder.map((a: any) => {
       totalPrice += a.total
     })
     return totalPrice
   }
 
-  deleteCartItem(product : any){
-    this.cartItemList.map((a : any, index: any) => {
-      if(product.id === a.id){
-        this.cartItemList.splice(index, 1)
-      }
-    })
+  deleteCartItem(product: any) {
+    let index = this.placeholder.indexOf(product)
+    this.placeholder.splice(index, 1)
+    console.log(this.placeholder);
+    this.setCartData(this.placeholder)
+    
   }
 
-  clearCart(){
-    this.cartItemList = []
+  clearCart() {
+    this.placeholder = []
   }
+
 
 
 }
