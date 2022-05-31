@@ -1,16 +1,21 @@
-<form>
+<form #form="ngForm" (submit)="onFilter($event)">
   <label for="search">Search</label>
   <input type="text" name="search" id="search" />
 
-  <div id="divCat">
-
+  <div>
     <p>Manufacturer</p>
     <label *ngFor="let brand of brands">{{brand}} 
-        <input type="checkbox" name="{{brand | lowercase}}" />
+      <input type="checkbox" name="{{brand | lowercase}}" />
     </label>
-
   </div>
-
+  
+  <div>
+    <p>Color</p>
+    <label *ngFor="let color of colors">{{color}} 
+        <input type="checkbox" name="{{color | lowercase}}" />
+    </label>
+  </div>
+  
   <div>
     <label for="from">Price from</label>
     <input type="number" name="priceFrom" id="from" />

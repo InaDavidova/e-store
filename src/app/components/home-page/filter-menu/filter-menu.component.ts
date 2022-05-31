@@ -7,11 +7,15 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class FilterMenuComponent implements OnInit {
 
-  @Input() brands!:Set<string>
-
+  @Input() brands!:Set<string>;
+  @Input() colors!:Set<string>;
+  @Input() onFilter!: Function;
+  // @Input('ngModel') model: any;
+    
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

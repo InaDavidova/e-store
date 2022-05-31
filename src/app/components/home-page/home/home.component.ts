@@ -9,6 +9,7 @@ import { ApiService, TList, TProduct } from 'src/app/shared/api.service';
 export class HomeComponent implements OnInit {
   list: TList = [];
   brands: Set<string> = new Set();
+  colors: Set<string> = new Set();
 
   constructor(private api: ApiService) {}
 
@@ -18,7 +19,16 @@ export class HomeComponent implements OnInit {
       .subscribe((data: TList) => {
         this.list = data;
 
-        data.map((el) => this.brands.add(el.manufacturer));
+        data.map((el) => {
+          this.brands.add(el.manufacturer);
+          this.colors.add(el.color);
+        });
       });
+  }
+
+  onFilter($event:any):void {
+    const formData = new FormData($event.target);
+    console.log(formData);
+
   }
 }
