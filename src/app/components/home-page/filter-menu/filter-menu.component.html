@@ -1,18 +1,20 @@
-<form #form="ngForm" (submit)="onFilter($event)">
-  <label for="search">Search</label>
-  <input type="text" name="search" id="search" />
+<form #form="ngForm" (submit)="onFilter($event)" class="flex flex-col items-start">
+  <label>Search
+    <input type="text" name="search"/>
+  </label>
+  
 
-  <div>
-    <p>Manufacturer</p>
+  <div class="">
+    <span>Manufacturer</span>
     <label *ngFor="let brand of brands">{{brand}} 
-      <input type="checkbox" name="{{brand | lowercase}}" />
+      <input type="checkbox" name="brand" value="{{brand}}"/>
     </label>
   </div>
   
   <div>
-    <p>Color</p>
+    <span>Color</span>
     <label *ngFor="let color of colors">{{color}} 
-        <input type="checkbox" name="{{color | lowercase}}" />
+        <input type="checkbox" name="color" value="{{color}}"/>
     </label>
   </div>
   
@@ -23,5 +25,5 @@
     <input type="number" name="priceTo" id="to" />
   </div>
 
-  <button>Filter</button>
+  <button class="self-center px-7 py-1 tracking-wider italic font-medium text-white bg-indigo-900 rounded-lg">Filter</button>
 </form>

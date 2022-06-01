@@ -27,8 +27,9 @@ export class HomeComponent implements OnInit {
   }
 
   onFilter($event:any):void {
-    const formData = new FormData($event.target);
-    console.log(formData);
+    const formData:any = new FormData($event.target);
+    console.log(formData.getAll('brand'));
+    console.log(formData.getAll('color'));
 
   }
 }
