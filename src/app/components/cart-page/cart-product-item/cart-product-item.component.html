@@ -1,4 +1,4 @@
-<ng-container>
+<ng-container *ngIf="isEmpty()">
     <section class="mt-14 ml-[20%] float-left">
         <div class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                 <img class="rounded-t-lg p-2" src="https://cdn2.iconfinder.com/data/icons/outline-web-application-1/20/cart-512.png" alt="empty cart" />
@@ -18,27 +18,27 @@
 
 
 <ng-container>
-    <section class="w-[50%] mt-14 ml-20 bg-gradient-to-r from-white to-gray-200  border-slate-500 float-left">
+    <section class="inline-block w-[50%] mt-14 ml-[25%] bg-gradient-to-r from-white to-gray-200  border-slate-500 float-left">
         <table class="table-auto w-full text-center">
             <thead class="font-mono text-xl">
                 <tr class="uppercase border-b-2">
                     <th class="">Product Details</th>
-                    <th class=""> QTY </th>
-                    <th class=""> Total </th>
+                    <th class="w-[150px]"> QTY </th>
+                    <th class="w-[150px]"> Total </th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td class="border-b-2">
                         <img class="m-5 w-[50%] h-[50%] hover:scale-150 float-left"
-                            src="https://cdn-files.kimovil.com/default/0003/03/thumb_202296_default_big.png" alt="">
+                            src="{{data.picUrl}}" alt="">
 
-                        <h3 class="text-xl font-bold m-3">Samsung Galaxy A20</h3>
+                        <h3 class="text-xl font-bold m-3">{{data.manufacturer}}</h3>
                         <ul class="text-sm font-medium text-gray-900 text-left">
-                            <li class="w-full px-4 py-2 ">Super AMODEL Screen with 16 million colors</li>
-                            <li class="w-full px-4 py-2 ">Android 9.0 OS with CPU Octa-core</li>
-                            <li class="w-full px-4 py-2 ">microSD slot, up to 512GB (Dedicated slot)</li>
-                            <li class="w-full px-4 py-2 ">Local Storage of 32 GB and 3GB of RAM</li>
+                            <li class="w-full px-4 py-2 ">Model: {{data.model}}, Color: {{data.color}}</li>
+                            <li class="w-full px-4 py-2 ">Camera: {{data.camera}}, Display in inches: {{data.displaySize}}</li>
+                            <li class="w-full px-4 py-2 ">Battery life: {{data.battery}}, </li>
+                            <li class="w-full px-4 py-2 ">Local Storage: {{data.rom}}, RAM: {{data.ram}}</li>
                         </ul>
                     </td>
                     <td class="">
@@ -51,7 +51,7 @@
                             </button>
                             <input 
                             class="h-9 w-14 text-center text-lg border-2  inline-block align-middle"
-                                type="text" value="{{countVal}}" />
+                                type="text" value="{{data.qty}}" />
                             <button
                                 (click)="addCount()"
                                 class="w-9 h-9 bg-white hover:bg-green-600 hover:text-white border-2 active:border-4 inline-block align-middle text-center">
@@ -61,18 +61,14 @@
                         </div>
                         <br>
                         <button type="button"
+                        (click)="onDelete(data)"
                             class="ml-2 text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">
                             <i class="fa fa-trash-o"></i>
                         </button>
                     </td>
-                    <td class="align-middle text-2xl font-bold p-3 underline">$ {{200 * countVal}}</td>
+                    <td class="align-middle text-2xl font-bold p-3 underline">$ {{data.priceEuro * data.qty}}</td>
 
                 </tr>
-
-                
-
-               
-
             </tbody>
         </table>
     </section>
