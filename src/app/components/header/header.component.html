@@ -1,6 +1,6 @@
-<header class="relative flex items-start w-full h-22 justify-around bg-gradient-to-r from-indigo-600 to-blue-500">
+<header class="relative flex items-start w-full h-[15vh] justify-around bg-gradient-to-r from-indigo-600 to-blue-500">
   <a routerLink="/home">
-    <h1 class="w-64 font-sans italic font-semibold text-gray-200 text-5xl p-3 mt-2 drop-shadow-2xl">
+    <h1 class="w-64 p-3 mt-2 font-sans text-5xl italic font-semibold text-gray-200 drop-shadow-2xl">
       E-STORE
     </h1>
   </a>
@@ -9,7 +9,7 @@
     <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">
       Search</label>
     <div class="relative">
-      <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+      <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
         <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -17,7 +17,7 @@
         </svg>
       </div>
       <input type="search" id="default-search"
-        class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-indigo-300 focus:ring-indigo-500 focus:border-indigo-500 dark:bg-indigo-700 dark:border-indigo-600 dark:placeholder-indigo-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500"
+        class="block w-full p-4 pl-10 text-sm text-gray-900 border border-indigo-300 rounded-lg bg-gray-50 focus:ring-indigo-500 focus:border-indigo-500 dark:bg-indigo-700 dark:border-indigo-600 dark:placeholder-indigo-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500"
         placeholder="Search for products..." required>
       <button type="submit"
         class="text-white absolute right-2.5 bottom-2.5 bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800">
@@ -55,7 +55,7 @@
       class="text-[20px] relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
       <i class="fa fa-shopping-cart"></i>
     </span>
-    <div class="absolute text-sm ml-1 mt-4 left-0 px-1 bg-red-500 rounded-full">2</div>
+    <div class="absolute left-0 px-1 mt-4 ml-1 text-sm bg-red-500 rounded-full">2</div>
 
   </button>
   </div>

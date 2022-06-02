@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-filter-menu',
@@ -9,13 +9,17 @@ export class FilterMenuComponent implements OnInit {
 
   @Input() brands!:Set<string>;
   @Input() colors!:Set<string>;
-  @Input() onFilter!: Function;
+  @Output() find = new EventEmitter<any>();
   // @Input('ngModel') model: any;
     
   constructor() { }
 
   ngOnInit(): void {
 
+  }
+
+  onSubmit(event: any) {
+    this.find.emit(event)
   }
 
 }

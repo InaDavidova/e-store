@@ -1,11 +1,11 @@
-<main class="px-20 py-7 min-h-screen flex items-center justify-center">
+<main class="flex items-center justify-center min-h-[75vh] px-20 py-7">
     <div class="flex flex-col items-center">
         <h1 class="text-3xl font-bold text-orange-700">{{product.manufacturer}} {{product.model}}</h1>
         <img class="max-h-96 py-7"
         src="{{product.picUrl}}" alt="product's photo">
         <button
         (click)="addProduct(product)"
-        class="relative w-3/4 inline-block px-8 py-3 border-2 border-orange-600 group focus:outline-none focus:ring">
+        class="relative inline-block w-3/4 px-8 py-3 border-2 border-orange-600 group focus:outline-none focus:ring">
             <span class="absolute inset-y-0 left-0 w-[2px] transition-all bg-orange-600 group-hover:w-full group-active:bg-orange-500">
 
             </span>
@@ -15,7 +15,7 @@
         </button>
     </div>
 
-    <table class="ml-7 bg-cyan-50 max-h-96 w-1/2 text-left indent-8 border-2">
+    <table class="w-1/2 text-left border-2 ml-7 bg-cyan-50 max-h-96 indent-8">
         <tbody class="border">
 
             <tr>
@@ -52,7 +52,7 @@
             </tr>
         </tbody>
         <tfoot>
-            <tr class="bg-indigo-900 text-white">
+            <tr class="text-white bg-indigo-900">
                 <th>Price</th>
                 <td>€ {{product.priceEuro}}</td>
             </tr>
