@@ -24,6 +24,6 @@ export class DetailsComponent implements OnInit {
   }
 
   addProduct(product: TProduct){
-    this.cart.addToCart(product)
+    this.cart.addToCart({...product, qty:1 })
   }
 }

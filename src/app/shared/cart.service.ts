@@ -16,15 +16,14 @@ export class CartService {
     //this.placeholder = ls;
   }
 
-  addToCart(product: TProduct) {
+  addToCart(product: any) {
     const ls = this.getCartData()
 
     const products = ls.filter((p: any) => p.id != product.id)
-
+    this.placeholder = [...products, product]
     const newData = [...products, product]
     this.setCartData(newData)
     this.cartItems.next(this.getCartData())
-    this.placeholder.push(product)
   }
 
   setCartData(data: any) {

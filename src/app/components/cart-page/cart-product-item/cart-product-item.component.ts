@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { TProduct } from 'src/app/shared/api.service';
 import { CartService } from 'src/app/shared/cart.service';
 
 @Component({
@@ -28,15 +29,20 @@ export class CartProductItemComponent implements OnInit {
     this.cart.isEmpty()
   }
 
-  countVal = 1;
 
   addCount() {
-    if (this.countVal < 20)
-      this.countVal += 1
+    if (this.data.qty <= 20){
+    this.data.qty++
+    }
   }
   subCount() {
-    if (this.countVal >= 1)
-      this.countVal -= 1
+    if (this.data.qty > 1){
+    this.data.qty--
+    }
+  }
+
+  setPrice(){
+
   }
 
 }

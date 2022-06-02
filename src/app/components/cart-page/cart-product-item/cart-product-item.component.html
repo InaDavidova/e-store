@@ -23,8 +23,8 @@
             <thead class="font-mono text-xl">
                 <tr class="uppercase border-b-2">
                     <th class="">Product Details</th>
-                    <th class=""> QTY </th>
-                    <th class=""> Total </th>
+                    <th class="w-[150px]"> QTY </th>
+                    <th class="w-[150px]"> Total </th>
                 </tr>
             </thead>
             <tbody>
@@ -51,7 +51,7 @@
                             </button>
                             <input 
                             class="h-9 w-14 text-center text-lg border-2  inline-block align-middle"
-                                type="text" value="{{countVal}}" />
+                                type="text" value="{{data.qty}}" />
                             <button
                                 (click)="addCount()"
                                 class="w-9 h-9 bg-white hover:bg-green-600 hover:text-white border-2 active:border-4 inline-block align-middle text-center">
@@ -66,7 +66,7 @@
                             <i class="fa fa-trash-o"></i>
                         </button>
                     </td>
-                    <td class="align-middle text-2xl font-bold p-3 underline">$ {{data.priceEuro * countVal}}</td>
+                    <td class="align-middle text-2xl font-bold p-3 underline">$ {{data.priceEuro * data.qty}}</td>
 
                 </tr>
             </tbody>

@@ -17,7 +17,7 @@ export class CartProductComponent implements OnInit {
     //     this.list = data;
     //   });
 
-    this.list = this.cart.placeholder
+    this.list = this.cart.placeholder // TODO
     
   }
 
