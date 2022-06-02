@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import {ApiService} from '../../shared/api.service'
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
   myform!: any;
 
   public loginForm!: FormGroup
-  constructor(private formBuilder : FormBuilder, private http : HttpClient, private router: Router) { }
+  constructor(private formBuilder : FormBuilder, private http : HttpClient, private router: Router, private api: ApiService) { }
 
   ngOnInit(): void {
 
@@ -34,6 +35,13 @@ export class LoginComponent implements OnInit {
   
 
   }
+/*
+  login(){
+    this.api.login();
+    }
+  }
+  */
+  
   login(){
     this.isLoading = true;
     this.http.get<any>('http://localhost:3000/users')
@@ -49,7 +57,7 @@ export class LoginComponent implements OnInit {
 
        this.isLoading = false;
         alert('login success');
-        localStorage.setItem("loginForm",JSON.stringify(this.loginForm.value));
+        localStorage.setItem("loginForm",JSON.stringify(this.loginForm.value.email));
         this.loginForm.reset();
         this.router.navigate(['profile']);
        
@@ -63,3 +71,4 @@ export class LoginComponent implements OnInit {
     })
   }
 }
+

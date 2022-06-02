@@ -19,9 +19,12 @@ import { PhoneCardComponent } from './components/home-page/phone-card/phone-card
 import { DetailsComponent } from './components/details-page/details/details.component';
 import { FilterMenuComponent } from './components/home-page/filter-menu/filter-menu.component';
 import { CreateUserCanDeactivateGuardService} from './components/signup/create-user-can-deactivate-guard.service';
-import { FooterComponent } from './components/footer/footer.component'
+import { FooterComponent } from './components/footer/footer.component';
+import { NodemailerComponent } from './components/nodemailer/nodemailer.component'
 
 //import { ConfirmValidatorDirective } from './shared/confirm-validator.direvtive';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {AngularMaterialModule} from './angular-material.module';
 
 @NgModule({
   declarations: [
@@ -31,14 +34,17 @@ import { FooterComponent } from './components/footer/footer.component'
     PhoneCardComponent,
     DetailsComponent,
     FilterMenuComponent,
-    FooterComponent //ConfirmValidatorDirective
+    FooterComponent,
+    NodemailerComponent //ConfirmValidatorDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    AngularMaterialModule
   ],
   providers: [CreateUserCanDeactivateGuardService],
   bootstrap: [AppComponent]
