@@ -1,32 +1,65 @@
-<section class=" bg-gradient-to-b from-orange-300 to-white w-2/4 h-[500px] border-2 border-black mt-5 ml-[25%] rounded-md">
-    <div class="m-8 text-center">
-        <h1 class="font-bold text-lg text-indigo-800 underline">Checkout Products</h1>
+<section
+    class=" bg-gradient-to-b from-orange-300 to-white w-2/4 h-[500px] border-2 border-orange-300 mt-5 ml-[25%] rounded-md">
+    <div class="">
+        <div class="m-8 text-center">
+            <h1 class="text-5xl p-3 text-indigo-800 font-light rounded-full shadow-xl">Overview Products</h1>
+        </div>
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        Product Detail
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Unit Price
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Quantity
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Price
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        <span class="sr-only"></span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let product of list">
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                        {{product.model}}
+                    </th>
+                    <td class="px-6 py-4">
+                        ${{product.priceEuro}}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{product.qty}}
+                    </td>
+                    <td class="px-6 py-4">
+                        ${{product.priceEuro * product.qty}}
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                        <button routerLink="/details/{{product.id}}"
+                            class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800">
+                            <span
+                                class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                                <i class="fa fa-info" aria-hidden="true"></i>
+                            </span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="border-2 m-3 border-black rounded-full p-2 float-right">
+            <h2 class="font-semibold">Total: ${{total}}</h2>
+        </div>
+        <button
+            class="content-center ml-[40%] mt-[45px] center relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-orange-300 to-yellow-300 group-hover:from-red-300 group-hover:to-yellow-300 hover:text-indigo-700 dark:text-indigo-700 focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-orange-300">
+            <span
+                class="relative font-bold px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                Click to proceed
+            </span>
+        </button>
     </div>
-    <table class="table-auto w-full text-center">
-        <thead class="font-mono text-xl">
-            <tr class="uppercase border-b-2">
-                <th class="">Product Details</th>
-                <th class=""> QTY </th>
-                <th class=""> Total </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="">
-                    product
-                </td>
-                <td class="">
-                    quantity
-                </td>
-                <td class="">
-        price
-        </td>
 
-            </tr>
-        </tbody>
-    </table>
-    <h2 class="float-right m-5 font-bold text-indigo-800 border-2 bg-orange-400 p-2">Total: $100000</h2>
-    <button class="ml-[45%] mt-20 w-20 h-10 bg-orange-500 hover:border-2 border-white font-bold">
-         Checkout 
-    </button>
 </section>

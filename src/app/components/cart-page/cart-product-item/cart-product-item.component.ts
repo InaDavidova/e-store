@@ -41,8 +41,4 @@ export class CartProductItemComponent implements OnInit {
     }
   }
 
-  setPrice(){
-
-  }
-
 }

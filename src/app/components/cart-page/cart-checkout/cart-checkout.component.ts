@@ -10,12 +10,13 @@ import { CheckoutService } from 'src/app/shared/checkout.service';
 export class CartCheckoutComponent implements OnInit {
 
   constructor(private cart: CartService, private check: CheckoutService) { }
-
+  list: any = []
+  total: number = 0
   ngOnInit(): void {
+    this.list = this.cart.placeholder
+    this.total = this.cart.getTotalPrice();
   }
 
-  onPost(data: any){
-    this.check.postCheckout(data)
-  }
+
 
 }
