@@ -59,7 +59,11 @@ export class LoginComponent implements OnInit {
         alert('login success');
         localStorage.setItem("loginForm",JSON.stringify(this.loginForm.value.email));
         this.loginForm.reset();
-        this.router.navigate(['profile']);
+          if (user.position === "admin") {
+            this.router.navigate(['profile']);
+        } else {
+          this.router.navigate(['home']);
+        }
        
       } else{
         this.isLoading = false;
