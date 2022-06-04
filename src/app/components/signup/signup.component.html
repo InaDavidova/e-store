@@ -16,6 +16,7 @@
                 placeholder="name@flowbite.com" #email
                 [formGroup]="signupForm"
                 [ngClass]="{'is-invalid':signupForm.get('email')?.errors && signupForm.get('email')?.touched}" 
+                [formControl]="emailFormControl"
                 >
                <!--
                doesn't work with ngModel

@@ -20,11 +20,8 @@ import { DetailsComponent } from './components/details-page/details/details.comp
 import { FilterMenuComponent } from './components/home-page/filter-menu/filter-menu.component';
 import { CreateUserCanDeactivateGuardService} from './components/signup/create-user-can-deactivate-guard.service';
 import { FooterComponent } from './components/footer/footer.component';
-import { NodemailerComponent } from './components/nodemailer/nodemailer.component'
-
-//import { ConfirmValidatorDirective } from './shared/confirm-validator.direvtive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {AngularMaterialModule} from './angular-material.module';
+
 
 @NgModule({
   declarations: [
@@ -34,8 +31,7 @@ import {AngularMaterialModule} from './angular-material.module';
     PhoneCardComponent,
     DetailsComponent,
     FilterMenuComponent,
-    FooterComponent,
-    NodemailerComponent //ConfirmValidatorDirective
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -43,8 +39,7 @@ import {AngularMaterialModule} from './angular-material.module';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule,
-    AngularMaterialModule
+    BrowserAnimationsModule
   ],
   providers: [CreateUserCanDeactivateGuardService],
   bootstrap: [AppComponent]
