@@ -17,12 +17,14 @@
                 [formGroup]="signupForm"
                 [ngClass]="{'is-invalid':signupForm.get('email')?.errors && signupForm.get('email')?.touched}" 
                 [formControl]="emailFormControl"
+                ngModel 
                 >
                <!--
                doesn't work with ngModel
+                  [formControl]="emailFormControl"
              -->
-            <!-- <span class="help-block" *ngIf="!email.valid && email.touched">Can you enter a valid email now?</span> -->
-          {{signupForm.get('email')?.errors | json}}
+             <span class="invalid-feedback" *ngIf="!signupForm.get('email')?.valid && signupForm.get('email')?.touched">Can you enter a valid email now?</span> 
+       <!--   {{signupForm.get('email')?.errors | json}} -->
               </div>
               <div class="mb-6">
                 <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-900">Your password</label>
@@ -35,7 +37,7 @@
                 [ngClass]="{'is-invalid':signupForm.get('confirmPassword')?.errors && signupForm.get('confirmPassword')?.touched}" required>
                <!-- [control]="confirmPassword" -->                      <!--.errors && signupForm.get('confirmPassword').touched}-->
                 <div class=" invalid-feedback" *ngIf="signupForm.get('confirmPassword')?.hasError('passwordMismatch')" >
-               <!-- Passwords dont match -->                                    <!--.hasError('passwordMismatch')-->
+                Passwords dont match                                <!--.hasError('passwordMismatch')-->
                 </div>
               </div>
               <button type="submit" [disabled]="!signupForm.valid" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mb-6 " >Sign up</button>
