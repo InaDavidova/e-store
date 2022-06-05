@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { TProduct } from 'src/app/shared/api.service';
 import { CartService } from 'src/app/shared/cart.service';
 
 @Component({
@@ -8,8 +7,9 @@ import { CartService } from 'src/app/shared/cart.service';
   styleUrls: ['./cart-product-item.component.css']
 })
 export class CartProductItemComponent implements OnInit {
-
+  isEmpty: boolean = false
   constructor(private cart: CartService) {
+    
 
   }
 
@@ -19,14 +19,11 @@ export class CartProductItemComponent implements OnInit {
 
 
   ngOnInit(): void {
+    
   }
 
   onDelete(product: any) {
     this.cart.deleteCartItem(product)
-  }
-
-  isEmpty() {
-    this.cart.isEmpty()
   }
 
 
