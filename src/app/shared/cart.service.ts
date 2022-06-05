@@ -9,7 +9,7 @@ export class CartService {
 
   public placeholder: any = this.getCartData()
   public cartItems = new BehaviorSubject([])
-
+  
   constructor() { 
     const ls = this.getCartData()
     if (ls) this.cartItems.next(ls)
@@ -40,13 +40,6 @@ export class CartService {
 
   getCount() {
     return this.placeholder.length
-  }
-
-  isEmpty(){
-    let empty = false;
-    if (this.placeholder.length == 0)
-      empty = true
-    return empty
   }
 
   getTotalPrice() {
