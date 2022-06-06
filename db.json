@@ -98,11 +98,34 @@
   ],
   "checkout": [
     {
-      "orderId": 0,
-      "user": "",
-      "items": "",
-      "itemCount": 0,
-      "price": 0
+      "country": "BG",
+      "address": "Люлин 1",
+      "phone": "0884452721",
+      "items": "Galaxy S10",
+      "price": 884,
+      "count": 1,
+      "user": "gub99@gmail.com",
+      "id": 1
+    },
+    {
+      "country": "UA",
+      "address": "Kyiv",
+      "phone": "0884452721",
+      "items": "Galaxy S10",
+      "price": 884,
+      "count": 1,
+      "user": "gub99@gmail.com",
+      "id": 2
+    },
+    {
+      "country": "BG",
+      "address": "Test Street Number 1",
+      "phone": "00000000001",
+      "items": "Galaxy S10,Pixel 6,iPhone,P50 Pro,Galaxy Note 20",
+      "price": 18786,
+      "count": 5,
+      "user": "gub99@gmail.com",
+      "id": 3
     }
   ]
 }
