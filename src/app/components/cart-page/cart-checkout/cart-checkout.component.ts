@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/shared/cart.service';
 import { CheckoutService } from 'src/app/shared/checkout.service';
 import { TCheckout } from 'src/app/shared/checkout.service';
-import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,7 +11,8 @@ import { Router } from '@angular/router';
 })
 export class CartCheckoutComponent implements OnInit {
 
-  constructor(private cart: CartService, private check: CheckoutService, private route: Router) { }
+  constructor(private cart: CartService, private check: CheckoutService, private route: Router,
+  ) {}
   list: any = []
   total: number = 0
   ngOnInit(): void {
@@ -24,13 +24,12 @@ export class CartCheckoutComponent implements OnInit {
 
     this.check.addCheckout(item)
       .subscribe(
-        data => {
+        data => // {
           console.log('Success', data),
-          alert('Your Purchase has been added successfully!')
-        }
+        
       )
-      this.cart.clearCart()
-      this.route.navigateByUrl("/")
+      
+    this.route.navigateByUrl("/payment")
   }
 
 

@@ -26,6 +26,7 @@ import { NodemailerComponent } from './components/nodemailer/nodemailer.componen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AngularMaterialModule} from './angular-material.module';
 import { CheckoutListComponent } from './components/checkout-list/checkout-list.component';
+import { PaymentComponent } from './components/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { CheckoutListComponent } from './components/checkout-list/checkout-list.
     FooterComponent,
     NodemailerComponent,
     CheckoutListComponent,
+    PaymentComponent,
    //ConfirmValidatorDirective
   ],
   imports: [

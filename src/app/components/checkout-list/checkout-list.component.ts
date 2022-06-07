@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/app/shared/cart.service';
 import { CheckoutService, TCheckout } from 'src/app/shared/checkout.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class CheckoutListComponent implements OnInit {
   public submitted: boolean = false
   public count: number = 0
 
-  constructor(private check: CheckoutService) { }
+  constructor(private check: CheckoutService, private cart: CartService) { }
 
   ngOnInit(): void {
     this.loadData()

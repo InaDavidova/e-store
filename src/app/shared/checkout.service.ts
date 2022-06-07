@@ -26,7 +26,10 @@ export class CheckoutService {
   constructor(private http: HttpClient, private cart: CartService) { }
 
   addCheckout(item: TCheckout){
-
+    
+    setTimeout(() => {
+      console.log("Delayed for 3 seconds.");
+    }, 3000)
     let tmp = this.cart.getCartData()
     item.items = tmp.map((product:any) => product.model).toString();
     item.price = this.cart.getTotalPrice()
