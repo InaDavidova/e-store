@@ -74,20 +74,20 @@ export class ApiService implements OnInit{
     return this.http.get(`http://localhost:3000/products/${id}`);
   }
 
-  getAllBrands(): Set<string> {
-    const brands: Set<string> = new Set();
+  isUser():Boolean {
+    let user = localStorage.getItem("loginForm");
 
-    this.getAllProducts()
-      // @ts-ignore
-      .subscribe((data: TList) => {
-        data.map((el) => {
-          brands.add(el.manufacturer);
-        });
-      });
-
-    return brands;
+    if (user) {
+      return true;      
+    } else {
+      return false;
+    }
   }
   
+  logout(){
+    localStorage.removeItem('loginForm');
+  }
+
   /*
   login(){
     this.isLoading = true;
