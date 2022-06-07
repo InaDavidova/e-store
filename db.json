@@ -119,11 +119,11 @@
     },
     {
       "country": "BG",
-      "address": "Test Street Number 1",
-      "phone": "00000000001",
-      "items": "Galaxy S10,Pixel 6,iPhone,P50 Pro,Galaxy Note 20",
-      "price": 18786,
-      "count": 5,
+      "address": "Люлин 1",
+      "phone": "0884452721",
+      "items": "Pixel 6",
+      "price": 1158,
+      "count": 1,
       "user": "gub99@gmail.com",
       "id": 3
     }

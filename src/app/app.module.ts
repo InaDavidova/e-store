@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home-page/home/home.component';
@@ -11,6 +11,8 @@ import { CartComponent } from './components/cart-page/cart/cart.component';
 import { CartCheckoutComponent } from './components/cart-page/cart-checkout/cart-checkout.component';
 import { CartProductComponent } from './components/cart-page/cart-product/cart-product.component';
 import { CartProductItemComponent } from './components/cart-page/cart-product-item/cart-product-item.component';
+import { CheckoutListComponent } from './components/checkout-list/checkout-list.component';
+import { PaymentComponent } from './components/payment/payment.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
@@ -21,13 +23,7 @@ import { FilterMenuComponent } from './components/home-page/filter-menu/filter-m
 import { CreateUserCanDeactivateGuardService} from './components/signup/create-user-can-deactivate-guard.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-<<<<<<< HEAD
-import {AngularMaterialModule} from './angular-material.module';
-import { CheckoutListComponent } from './components/checkout-list/checkout-list.component';
-import { PaymentComponent } from './components/payment/payment.component';
-=======
 
->>>>>>> e785fda8dcbb8a77eabe9a2ed20051a0b5ef56db
 
 @NgModule({
   declarations: [
@@ -37,18 +33,13 @@ import { PaymentComponent } from './components/payment/payment.component';
     PhoneCardComponent,
     DetailsComponent,
     FilterMenuComponent,
-<<<<<<< HEAD
-    FooterComponent,
-    NodemailerComponent,
     CheckoutListComponent,
     PaymentComponent,
-   //ConfirmValidatorDirective
-=======
     FooterComponent
->>>>>>> e785fda8dcbb8a77eabe9a2ed20051a0b5ef56db
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
