@@ -9,7 +9,7 @@ export class CartService {
 
   public placeholder: any = this.getCartData()
   public cartItems = new BehaviorSubject([])
-
+  
   constructor() { 
     const ls = this.getCartData()
     if (ls) this.cartItems.next(ls)
@@ -27,11 +27,11 @@ export class CartService {
   }
 
   setCartData(data: any) {
-    localStorage.setItem('cart', JSON.stringify(data))
+    localStorage.setItem('cart', JSON.stringify(data)) // TODO: try/catch block
   }
 
   getCartData() {
-    return JSON.parse(localStorage.getItem('cart') || '[]')
+    return JSON.parse(localStorage.getItem('cart') || '[]') // TODO: try/catch block
   }
 
   getProducts(): Observable<any[]> {
@@ -42,18 +42,11 @@ export class CartService {
     return this.placeholder.length
   }
 
-  isEmpty(){
-    let empty = false;
-    if (this.placeholder.length == 0)
-      empty = true
-    return empty
-  }
-
   getTotalPrice() {
     let totalPrice = 0
-    this.placeholder.map((a: any) => {
-      totalPrice += a.total
-    })
+    this.placeholder.forEach((a: any) => {
+      totalPrice += a.priceEuro * a.qty
+      })
     return totalPrice
   }
 
@@ -62,7 +55,7 @@ export class CartService {
     this.placeholder.splice(index, 1)
     console.log(this.placeholder);
     this.setCartData(this.placeholder)
-    
+    this.cartItems.next(this.getCartData())
   }
 
   clearCart() {
