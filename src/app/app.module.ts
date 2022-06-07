@@ -20,13 +20,14 @@ import { DetailsComponent } from './components/details-page/details/details.comp
 import { FilterMenuComponent } from './components/home-page/filter-menu/filter-menu.component';
 import { CreateUserCanDeactivateGuardService} from './components/signup/create-user-can-deactivate-guard.service';
 import { FooterComponent } from './components/footer/footer.component';
-import { NodemailerComponent } from './components/nodemailer/nodemailer.component'
-
-//import { ConfirmValidatorDirective } from './shared/confirm-validator.direvtive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+<<<<<<< HEAD
 import {AngularMaterialModule} from './angular-material.module';
 import { CheckoutListComponent } from './components/checkout-list/checkout-list.component';
 import { PaymentComponent } from './components/payment/payment.component';
+=======
+
+>>>>>>> e785fda8dcbb8a77eabe9a2ed20051a0b5ef56db
 
 @NgModule({
   declarations: [
@@ -36,11 +37,15 @@ import { PaymentComponent } from './components/payment/payment.component';
     PhoneCardComponent,
     DetailsComponent,
     FilterMenuComponent,
+<<<<<<< HEAD
     FooterComponent,
     NodemailerComponent,
     CheckoutListComponent,
     PaymentComponent,
    //ConfirmValidatorDirective
+=======
+    FooterComponent
+>>>>>>> e785fda8dcbb8a77eabe9a2ed20051a0b5ef56db
   ],
   imports: [
     BrowserModule,
@@ -48,8 +53,7 @@ import { PaymentComponent } from './components/payment/payment.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule,
-    AngularMaterialModule
+    BrowserAnimationsModule
   ],
   providers: [CreateUserCanDeactivateGuardService],
   bootstrap: [AppComponent]

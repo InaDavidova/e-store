@@ -111,5 +111,9 @@ validateEmaileNotTaken(control: AbstractControl) {
       */
       
  }
+
+ sendEmail(url: string, data: any){
+  return this.http.post(url, data);
+}
 }
 

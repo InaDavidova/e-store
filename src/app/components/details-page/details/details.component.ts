@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService, TProduct } from 'src/app/shared/api.service';
 import { CartService } from 'src/app/shared/cart.service';
 
@@ -11,19 +11,30 @@ import { CartService } from 'src/app/shared/cart.service';
 export class DetailsComponent implements OnInit {
   product!: TProduct;
 
-  constructor(private route: ActivatedRoute, private api: ApiService, private cart: CartService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    public api: ApiService,
+    private cart: CartService
+  ) {}
 
   ngOnInit(): void {
     const id = (this.route.params as any).value.id;
 
-    this.api.getProductByID(id)
-    // @ts-ignore
-    .subscribe((data:TProduct) => {
-      this.product = data;
-    })
+    this.api
+      .getProductByID(id)
+      // @ts-ignore
+      .subscribe((data: TProduct) => {
+        this.product = data;
+      });
   }
 
-  addProduct(product: TProduct){
-    this.cart.addToCart({...product, qty:1 })
+  addProduct(product: TProduct) {
+    
+    if (this.api.isUser()) {
+      this.cart.addToCart({ ...product, qty: 1 });
+    } else {
+      this.router.navigate(['/login']);
+    }
   }
 }
