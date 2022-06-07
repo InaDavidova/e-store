@@ -7,6 +7,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { CartComponent } from './components/cart-page/cart/cart.component';
 import { CartCheckoutComponent } from './components/cart-page/cart-checkout/cart-checkout.component';
+import { CheckoutListComponent } from './components/checkout-list/checkout-list.component';
+import { PaymentComponent } from './components/payment/payment.component';
 import { CreateUserCanDeactivateGuardService } from './components/signup/create-user-can-deactivate-guard.service';
 
 const routes: Routes = [
@@ -14,13 +16,16 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'details/:id', component: DetailsComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'signup', 
+  {
+    path: 'signup',
     component: SignupComponent,
-    canDeactivate: [CreateUserCanDeactivateGuardService] 
+    canDeactivate: [CreateUserCanDeactivateGuardService]
   },
   { path: 'profile', component: ProfileComponent },
   { path: 'cart', component: CartComponent },
-  { path: 'checkout', component: CartCheckoutComponent }
+  { path: 'checkout', component: CartCheckoutComponent },
+  { path: 'purchases', component: CheckoutListComponent },
+  { path: 'payment', component: PaymentComponent}
 ];
 
 @NgModule({
