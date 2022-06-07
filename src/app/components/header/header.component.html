@@ -5,19 +5,33 @@
     </h1>
   </a>
 
-  <button type="button" routerLink="/login"
-    class="mr-6 mt-6 relative text-white bg-indigo-700 hover:bg-indigo-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
-    Log In
-  </button>
+  <div class="flex items-center self-center justify-end w-full">
 
-  <button type="button" routerLink="/signup"
-    class="mr-6 mt-6 relative  text-white bg-indigo-700 hover:bg-indigo-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
-    Sign Up
-  </button>
+    <button type="button" routerLink="/"
+      class="mr-6 relative text-white bg-indigo-700 hover:bg-indigo-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
+      Home
+    </button>
+  
+    <button *ngIf="!api?.isUser()" type="button" routerLink="/login"
+      class="mr-6 relative text-white bg-indigo-700 hover:bg-indigo-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
+      Log In
+    </button>
 
-  <div class="border-l-[3px] border-indigo-700 h-[15vh] mr-5"></div>
+    <button *ngIf="!api?.isUser()" type="button" routerLink="/signup"
+      class="mr-6 relative  text-white bg-indigo-700 hover:bg-indigo-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
+      Sign Up
+    </button>
 
-  <div *ngIf="router.url === '/cart'">
+    <button *ngIf="api?.isUser()" type="button" (click)="api?.logout()" routerLink="/"
+      class="mr-6 relative  text-white bg-indigo-700 hover:bg-indigo-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
+      LogOut
+    </button>
+  
+  </div>
+
+  <div *ngIf="api?.isUser()" class="border-l-[3px] border-indigo-700 h-[15vh] mr-5"></div>
+
+  <div *ngIf="router.url === '/cart' && api?.isUser()">
     <button routerLink="/"
             class="drop-shadow-2xl mr-5 mt-6 relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
             <span class="text-[20px] relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
@@ -27,7 +41,7 @@
   </div>
 
 
-  <div *ngIf="router.url != '/cart'">
+  <div *ngIf="router.url != '/cart' && api?.isUser()">
     <button routerLink="/cart"
     class=" h-[10vh] drop-shadow-2xl mr-5 mt-4 relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
     <span
