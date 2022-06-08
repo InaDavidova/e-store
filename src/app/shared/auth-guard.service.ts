@@ -6,17 +6,17 @@ import { ApiService } from './api.service';
   providedIn: 'root'
 })
 
-export class AdminGuardService implements CanActivate {
+export class AuthGuardService implements CanActivate {
 
   constructor(public router: Router, public api: ApiService) { }
 
   canActivate(): boolean {
 
-    if(!this.api.isAdmin()) {
+    if(!this.api.isUser()) {
       this.router.navigate(['login']);
       return false;
     }
-
+    
     return true;
   }
 }

@@ -11,6 +11,7 @@ import { CheckoutListComponent } from './components/checkout-list/checkout-list.
 import { PaymentComponent } from './components/payment/payment.component';
 import { CreateUserCanDeactivateGuardService } from './components/signup/create-user-can-deactivate-guard.service';
 import { AdminGuardService } from './shared/admin-guard.service';
+import { AuthGuardService } from './shared/auth-guard.service';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -23,10 +24,10 @@ const routes: Routes = [
     canDeactivate: [CreateUserCanDeactivateGuardService]
   },
   { path: 'profile', component: ProfileComponent, canActivate: [AdminGuardService] },
-  { path: 'cart', component: CartComponent },
-  { path: 'checkout', component: CartCheckoutComponent },
-  { path: 'purchases', component: CheckoutListComponent },
-  { path: 'payment', component: PaymentComponent}
+  { path: 'cart', component: CartComponent, canActivate: [AuthGuardService] },
+  { path: 'checkout', component: CartCheckoutComponent, canActivate: [AuthGuardService] },
+  { path: 'purchases', component: CheckoutListComponent, canActivate: [AuthGuardService] },
+  { path: 'payment', component: PaymentComponent, canActivate: [AuthGuardService]}
 ];
 
 @NgModule({
