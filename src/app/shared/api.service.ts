@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
+
 export type TList = TProduct[];
 
 export type TProduct = {
@@ -88,34 +89,6 @@ export class ApiService implements OnInit{
     return brands;
   }
   
-  /*
-  login(){
-    this.isLoading = true;
-    this.http.get<any>('http://localhost:3000/users')
-    .subscribe(res=>{
-      const user = res.find((a:any)=>{
-        return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
-       
-      });
-     
-    //  if(user.id == 1 || user.id == 2 || user.id == 3){
-      //.position === "admin")
-      if (user) {
+  
 
-       this.isLoading = false;
-        alert('login success');
-        localStorage.setItem("loginForm",JSON.stringify(this.loginForm.value));
-        this.loginForm.reset();
-        this.router.navigate(['profile']);
-       
-      } else{
-        this.isLoading = false;
-        alert('user not found');
-      }
-    }, err=>{
-      this.isLoading = false;
-      alert('sth is wrong');
-    })
-  }
-  */
 }
