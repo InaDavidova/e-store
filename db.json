@@ -98,11 +98,34 @@
   ],
   "checkout": [
     {
-      "orderId": 0,
-      "user": "",
-      "items": "",
-      "itemCount": 0,
-      "price": 0
+      "country": "BG",
+      "address": "Люлин 1",
+      "phone": "0884452721",
+      "items": "Galaxy S10",
+      "price": 884,
+      "count": 1,
+      "user": "gub99@gmail.com",
+      "id": 1
+    },
+    {
+      "country": "UA",
+      "address": "Kyiv",
+      "phone": "0884452721",
+      "items": "Galaxy S10",
+      "price": 884,
+      "count": 1,
+      "user": "gub99@gmail.com",
+      "id": 2
+    },
+    {
+      "country": "BG",
+      "address": "Люлин 1",
+      "phone": "0884452721",
+      "items": "Pixel 6",
+      "price": 1158,
+      "count": 1,
+      "user": "gub99@gmail.com",
+      "id": 3
     }
   ]
 }

@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { ApiService } from './api.service';
 import { CartService } from './cart.service';
 
 export type TList = TCheckout[];
@@ -8,6 +10,9 @@ export type TList = TCheckout[];
 export type TCheckout = {
     orderId: number,
     user: string,
+    country: string,
+    address: string,
+    phone: number,
     items: string,
     count: string,
     price: number,
@@ -20,15 +25,28 @@ export class CheckoutService {
 
   constructor(private http: HttpClient, private cart: CartService) { }
 
-  postCheckout(data: TCheckout){
-    return this.http.post<any>('http://localhost:3000/checkout', data).pipe(
-      map((res: TCheckout) => {
-        return res;
-      })
-    );
+  addCheckout(item: TCheckout){
+    
+    setTimeout(() => {
+      console.log("Delayed for 3 seconds.");
+    }, 3000)
+    let tmp = this.cart.getCartData()
+    item.items = tmp.map((product:any) => product.model).toString();
+    item.price = this.cart.getTotalPrice()
+    item.count = tmp.length
+    item.user = this.cart.getLocalUser()
+    
+    return this.http.post<any>('http://localhost:3000/checkout', item)
   }
 
-  getCart(){
-    this.cart.getCartData()
+  getCheckout():Observable<TCheckout[]> {
+    return this.http.get<TCheckout[]>('http://localhost:3000/checkout')
+  }
+
+  deleteCheckout(id: number){
+    const deleteEndpoint = 'http://localhost:3000/checkout/' + id
+    console.log(deleteEndpoint);
+    
+    return this.http.delete(deleteEndpoint)
   }
 }

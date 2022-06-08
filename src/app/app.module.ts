@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home-page/home/home.component';
@@ -11,6 +11,8 @@ import { CartComponent } from './components/cart-page/cart/cart.component';
 import { CartCheckoutComponent } from './components/cart-page/cart-checkout/cart-checkout.component';
 import { CartProductComponent } from './components/cart-page/cart-product/cart-product.component';
 import { CartProductItemComponent } from './components/cart-page/cart-product-item/cart-product-item.component';
+import { CheckoutListComponent } from './components/checkout-list/checkout-list.component';
+import { PaymentComponent } from './components/payment/payment.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
@@ -31,10 +33,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PhoneCardComponent,
     DetailsComponent,
     FilterMenuComponent,
+    CheckoutListComponent,
+    PaymentComponent,
     FooterComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
