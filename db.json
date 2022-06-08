@@ -129,12 +129,15 @@
     },
     {
       "country": "BG",
-      "address": "Varna",
-      "phone": "0897708330",
-      "items": "iPhone",
-      "price": 819,
+
+   
+      "address": "Люлин 1",
+      "phone": "0884452721",
+      "items": "Pixel 6",
+      "price": 2895,
       "count": 1,
-      "user": "pravdo00@gmail.com",
+      "user": "iva@gmail.com",
+
       "id": 4
     }
   ]

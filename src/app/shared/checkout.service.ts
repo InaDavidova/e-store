@@ -21,7 +21,7 @@ export type TCheckout = {
 @Injectable({
   providedIn: 'root'
 })
-export class CheckoutService {
+export class  CheckoutService {
 
   constructor(private http: HttpClient, private cart: CartService) { }
 
@@ -49,4 +49,12 @@ export class CheckoutService {
     
     return this.http.delete(deleteEndpoint)
   }
+
+  // getTotalPrice(){
+  //   return JSON.parse(localStorage.getItem('toal_price') || '')
+  // }
+
+  // setTotalPrice(data: number){
+  //   return localStorage.setItem('cart', JSON.stringify(data))
+  // }
 }

@@ -10,13 +10,12 @@ import { CheckoutService } from 'src/app/shared/checkout.service';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
-  private last: any = {}
-  private list: any = []
+
   public amount: string = "0"
   public isEmpty: boolean = true
   public price: number = 0
 
-  constructor(private cart: CartService, private route: Router, private check: CheckoutService) {
+  constructor(private cart: CartService, private route: Router) {
 
   }
 
@@ -27,14 +26,9 @@ export class PaymentComponent implements OnInit {
       this.isEmpty = false
     }
 
-    this.check.getCheckout().subscribe(data => {
-      this.list = data
-      this.last = this.list[this.list.length - 1]
-      this.price = this.last.price
-      console.log(this.price);
-      this.amount = this.price.toString()
-      console.log(this.amount);
-
+    this.amount = localStorage.getItem('total_price')!
+    console.log(this.amount);
+    this.price = parseInt(this.amount)
 
       render(
         {
@@ -49,15 +43,6 @@ export class PaymentComponent implements OnInit {
           }
         }
       )
-
-    })
-    
-
-
-    
-
-
-
 
   }
 
