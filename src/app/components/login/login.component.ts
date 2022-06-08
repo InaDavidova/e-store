@@ -64,7 +64,13 @@ export class LoginComponent implements OnInit {
       if (user) {
        this.isLoading = false;
         alert('login success');
-        localStorage.setItem("loginForm",JSON.stringify(this.loginForm.value.email));
+
+        const userData = {
+          email: user.email,
+          position: user.position
+        }
+        
+        localStorage.setItem("loginForm",JSON.stringify(userData));
         this.loginForm.reset();
         this.router.navigate(['home']);
       

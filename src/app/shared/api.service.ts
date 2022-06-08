@@ -84,6 +84,16 @@ export class ApiService implements OnInit{
       return false;
     }
   }
+
+  isAdmin():Boolean {
+    let userData = JSON.parse(localStorage.getItem("loginForm") || '{}')
+
+    if (userData.position == 'admin') {
+      return true;      
+    } else {
+      return false;
+    }
+  }
   
 
   logout(){
