@@ -48,7 +48,7 @@ export class ProfileComponent implements OnInit {
     this.api.postProfile(this.profileModelObj)
     .subscribe(res=>{
       console.log(res)
-      alert("Added new user");
+    //  alert("Added new user");
       let ref = document.getElementById('cancel');
       ref?.click();
       this.formValue.reset();
@@ -70,7 +70,7 @@ export class ProfileComponent implements OnInit {
   deleteProfileDetails(row: any){
     this.api.deleteProfile(row.id)
     .subscribe(res=>{
-      alert("Deleted User");
+    //  alert("Deleted User");
       this.getAllData();
     },
     err=>{
@@ -95,7 +95,7 @@ export class ProfileComponent implements OnInit {
     this.profileModelObj.position = this.formValue.value.position;
     this.api.updateProfile(this.profileModelObj, this.profileModelObj.id)
     .subscribe(res=>{
-      alert('updated');
+    //  alert('updated');
       let ref = document.getElementById('cancel')
       ref?.click();
       this.formValue.reset();

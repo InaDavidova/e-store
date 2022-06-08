@@ -63,7 +63,7 @@ export class LoginComponent implements OnInit {
    
       if (user) {
        this.isLoading = false;
-        alert('login success');
+        //alert('login success');
         localStorage.setItem("loginForm",JSON.stringify(this.loginForm.value.email));
         this.loginForm.reset();
         this.router.navigate(['home']);
