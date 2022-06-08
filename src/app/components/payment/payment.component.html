@@ -8,7 +8,7 @@
 </section>
 
 <section *ngIf="!isEmpty"
-class=" bg-indigo-600 border-2 border-gray-600 m-20 p-5 text-center">
+class=" bg-indigo-600 border-2 border-gray-600 m-[83px] p-5 text-center">
     <h1 class="text-2xl text-white font-semibold m-2">Please, proceed payment via PayPal..</h1>
     <p class="m-2 text-white text-lg">Amount:
         <span class="text-green-400 underline font-semibold">
@@ -16,4 +16,5 @@ class=" bg-indigo-600 border-2 border-gray-600 m-20 p-5 text-center">
         </span> 
         </p>
     <div id="myPayPalBtn"></div>
+    <p class="font-bold text-xs text-red-700 float-right">*If buttons dont show up, please refresh the page</p>
 </section>

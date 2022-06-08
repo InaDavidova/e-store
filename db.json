@@ -128,24 +128,14 @@
       "id": 3
     },
     {
-      "country": "UA",
+      "country": "BG",
       "address": "Люлин 1",
       "phone": "0884452721",
-      "items": "Galaxy S10",
-      "price": 1768,
+      "items": "Pixel 6",
+      "price": 2895,
       "count": 1,
-      "user": "gub99@gmail.com",
+      "user": "iva@gmail.com",
       "id": 4
-    },
-    {
-      "country": "UA",
-      "address": "Люлин 1",
-      "phone": "0884452721",
-      "items": "P50 Pro",
-      "price": 2667,
-      "count": 1,
-      "user": "gub99@gmail.com",
-      "id": 5
     }
   ]
 }
