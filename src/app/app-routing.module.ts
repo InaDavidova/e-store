@@ -10,6 +10,7 @@ import { CartCheckoutComponent } from './components/cart-page/cart-checkout/cart
 import { CheckoutListComponent } from './components/checkout-list/checkout-list.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { CreateUserCanDeactivateGuardService } from './components/signup/create-user-can-deactivate-guard.service';
+import { AdminGuardService } from './shared/admin-guard.service';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -21,7 +22,7 @@ const routes: Routes = [
     component: SignupComponent,
     canDeactivate: [CreateUserCanDeactivateGuardService]
   },
-  { path: 'profile', component: ProfileComponent },
+  { path: 'profile', component: ProfileComponent, canActivate: [AdminGuardService] },
   { path: 'cart', component: CartComponent },
   { path: 'checkout', component: CartCheckoutComponent },
   { path: 'purchases', component: CheckoutListComponent },
