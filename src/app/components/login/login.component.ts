@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import {ApiService} from '../../shared/api.service'
+import {ApiService} from '../../shared/api.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +16,11 @@ export class LoginComponent implements OnInit {
   myform!: any;
 
   public loginForm!: FormGroup
-  constructor(private formBuilder : FormBuilder, private http : HttpClient, private router: Router, private api: ApiService) { }
+  constructor(
+    private formBuilder : FormBuilder, 
+    private http : HttpClient, 
+    private router: Router, 
+    private api: ApiService) { }
 
   ngOnInit(): void {
 
@@ -34,13 +38,18 @@ export class LoginComponent implements OnInit {
 
   
 
-  }
+  
 /*
   login(){
-    this.api.login();
+    this.api.login()
+    .subscribe((res: FormGroup)=>{
+      this.loginForm = res;
+    })
+    
     }
+    */
   }
-  */
+  
   
   login(){
     this.isLoading = true;
@@ -51,19 +60,14 @@ export class LoginComponent implements OnInit {
        
       });
      
-    //  if(user.id == 1 || user.id == 2 || user.id == 3){
-      //.position === "admin")
+   
       if (user) {
-
        this.isLoading = false;
         alert('login success');
         localStorage.setItem("loginForm",JSON.stringify(this.loginForm.value.email));
         this.loginForm.reset();
-          if (user.position === "admin") {
-            this.router.navigate(['profile']);
-        } else {
-          this.router.navigate(['home']);
-        }
+        this.router.navigate(['home']);
+      
        
       } else{
         this.isLoading = false;
@@ -74,5 +78,6 @@ export class LoginComponent implements OnInit {
       alert('sth is wrong');
     })
   }
+  
 }
 
