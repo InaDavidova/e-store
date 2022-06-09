@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { render } from 'creditcardpayments/creditCardPayments';
 import { CartService } from 'src/app/shared/cart.service';
-import { CheckoutService } from 'src/app/shared/checkout.service';
 
 @Component({
   selector: 'app-payment',
@@ -27,6 +26,7 @@ export class PaymentComponent implements OnInit {
     }
 
     this.amount = localStorage.getItem('total_price')!
+
     console.log(this.amount);
     this.price = parseInt(this.amount)
 

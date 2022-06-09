@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class CartCheckoutComponent implements OnInit {
 
   constructor(private cart: CartService, private check: CheckoutService, private route: Router,
-  ) {}
+  ) { }
   list: any = []
   total: number = 0
   ngOnInit(): void {
@@ -25,11 +25,9 @@ export class CartCheckoutComponent implements OnInit {
 
     this.check.addCheckout(item)
       .subscribe(
-        data => // {
-          console.log('Success', data),
-        
+        data => console.log('Success', data)
       )
-      
+
     this.route.navigateByUrl("/payment")
   }
 

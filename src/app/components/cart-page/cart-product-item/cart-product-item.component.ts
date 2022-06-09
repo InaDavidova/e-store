@@ -9,11 +9,8 @@ import { CartService } from 'src/app/shared/cart.service';
 export class CartProductItemComponent implements OnInit {
   isEmpty: boolean = false
   constructor(private cart: CartService) {
-    
 
   }
-
-  //public cartList: any = this.cart.getProducts()
 
   @Input() data!: any;
 
