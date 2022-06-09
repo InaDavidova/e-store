@@ -29,13 +29,7 @@ export class LoginComponent implements OnInit {
       email: new FormControl(''),
       password: new FormControl('')
     });
-
-  
-
-  
-
   }
-  
   
   login(){
     this.isLoading = true;
@@ -43,24 +37,17 @@ export class LoginComponent implements OnInit {
     .subscribe(res=>{
       const user = res.find((a:any)=>{
         return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
-       
       });
-     
-   
+  
       if (user) {
        this.isLoading = false;
-
         const userData = {
           email: user.email,
           position: user.position
-        }
-        
+        }  
         localStorage.setItem("loginForm",JSON.stringify(userData));
-
         this.loginForm.reset();
-        this.router.navigate(['home']);
-      
-       
+        this.router.navigate(['home']);   
       } else{
         this.isLoading = false;
         alert('user not found');

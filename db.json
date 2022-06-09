@@ -96,11 +96,11 @@
       "position": "user"
     },
     {
+      "id": 5,
       "name": "Alice",
       "email": "alice@abv.bg",
       "password": "asd",
-      "confirmPassword": "asd",
-      "id": 5
+      "position": "user"
     }
   ],
   "checkout": [
