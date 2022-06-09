@@ -94,6 +94,13 @@
       "email": "iva@gmail.com",
       "password": "pass4",
       "position": "user"
+    },
+    {
+      "name": "Alice",
+      "email": "alice@abv.bg",
+      "password": "asd",
+      "confirmPassword": "asd",
+      "id": 5
     }
   ],
   "checkout": [
@@ -129,17 +136,28 @@
     },
     {
       "country": "BG",
-      "address": "Av. Republica",
-      "phone": "910345045",
-      "items": "Pixel 6",
-      "price": 579,
+      "address": "Люлин 1",
+      "phone": "0884452721",
+      "items": "Galaxy S10",
+      "price": 1768,
       "count": 1,
       "user": {
-        "email": "InaD@gmail.com",
+        "email": "gub99@gmail.com",
         "position": "admin"
       },
-
       "id": 4
+    },
+    {
+      "country": "UA",
+      "address": "Люлин 1",
+      "phone": "0884452721",
+      "items": "Galaxy S10",
+      "price": 1768,
+      "count": 1,
+      "user": {
+        "email": "alice@abv.bg"
+      },
+      "id": 5
     }
   ]
 }

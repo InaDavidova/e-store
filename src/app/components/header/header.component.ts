@@ -17,7 +17,6 @@ export class HeaderComponent implements OnInit {
 
   constructor(public router: Router, private cart: CartService, public api: ApiService) { }
   
-  // console.log(this.isUser);
   ngOnInit(): void {
     this.cart.cartItems.subscribe((d: string | TProduct[]) => {
       this.totalItems = d.length
