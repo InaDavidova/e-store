@@ -3,6 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, NgForm, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CustomValidationService } from 'src/app/services/custom-validation.service';
+import { forbidenNameValidator } from 'src/app/shared/name.validator.';
 //import { RegisterValidators } from '../validators/register-validators';
 //import {EmailService} from '../../services/email.service';
 //import { ApiService} from '../../shared/api.service'
@@ -35,7 +36,7 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {
     this.signupForm = this.formBuilder.group({
-      name:["", [Validators.minLength(3), Validators.required]],
+      name:["", [Validators.minLength(3), Validators.required, forbidenNameValidator(/password/)]],
       email:["", this.customValidator.validateEmail.bind(this.customValidator),this.customValidator.validateEmaileNotTaken.bind(this.customValidator) ,[Validators.required]],  //,this.customValidator.validateEmaileNotTaken.bind(this.customValidator)
       password:[""],
       confirmPassword:['']
