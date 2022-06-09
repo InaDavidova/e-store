@@ -16,6 +16,7 @@
                 <div *ngIf="signupForm.get('name')?.errors && signupForm.get('name')?.touched">
                   <span class="invalid-feedback" *ngIf="signupForm.get('name')?.errors?.['required']">Name is required</span>
                   <span class="invalid-feedback" *ngIf="signupForm.get('name')?.errors?.['minlength']">Name must be at least 3 characters</span>
+                  <span class="invalid-feedback" *ngIf="signupForm.get('name')?.errors?.['forbiddenName']">Name not allowed</span>
                 </div>
               </div>
               <div class="mb-6">
