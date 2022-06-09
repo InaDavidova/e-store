@@ -129,14 +129,15 @@
     },
     {
       "country": "BG",
-
-   
-      "address": "Люлин 1",
-      "phone": "0884452721",
+      "address": "Av. Republica",
+      "phone": "910345045",
       "items": "Pixel 6",
-      "price": 2895,
+      "price": 579,
       "count": 1,
-      "user": "iva@gmail.com",
+      "user": {
+        "email": "InaD@gmail.com",
+        "position": "admin"
+      },
 
       "id": 4
     }
