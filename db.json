@@ -94,6 +94,13 @@
       "email": "iva@gmail.com",
       "password": "pass4",
       "position": "user"
+    },
+    {
+      "name": "Alice",
+      "email": "alice@abv.bg",
+      "password": "asd",
+      "confirmPassword": "asd",
+      "id": 5
     }
   ],
   "checkout": [
@@ -126,6 +133,31 @@
       "count": 1,
       "user": "gub99@gmail.com",
       "id": 3
+    },
+    {
+      "country": "BG",
+      "address": "Люлин 1",
+      "phone": "0884452721",
+      "items": "Galaxy S10",
+      "price": 1768,
+      "count": 1,
+      "user": {
+        "email": "gub99@gmail.com",
+        "position": "admin"
+      },
+      "id": 4
+    },
+    {
+      "country": "UA",
+      "address": "Люлин 1",
+      "phone": "0884452721",
+      "items": "Galaxy S10",
+      "price": 1768,
+      "count": 1,
+      "user": {
+        "email": "alice@abv.bg"
+      },
+      "id": 5
     }
   ]
 }

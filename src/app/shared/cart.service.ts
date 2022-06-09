@@ -67,7 +67,6 @@ export class CartService {
   deleteCartItem(product: any) {
     let index = this.placeholder.indexOf(product)
     this.placeholder.splice(index, 1)
-    console.log(this.placeholder);
     this.setCartData(this.placeholder)
     this.cartItems.next(this.getCartData())
   }
