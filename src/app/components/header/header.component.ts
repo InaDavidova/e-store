@@ -1,4 +1,4 @@
-import { Component, OnInit, SimpleChange } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TProduct } from 'src/app/shared/api.service';
 import { CartService } from 'src/app/shared/cart.service';
