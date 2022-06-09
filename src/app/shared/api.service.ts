@@ -30,7 +30,6 @@ export class ApiService implements OnInit{
   public loginForm!: FormGroup
   constructor(private formBuilder : FormBuilder, private http : HttpClient, private router: Router) { }
 
-  //constructor(private http: HttpClient) {}
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
@@ -75,10 +74,20 @@ export class ApiService implements OnInit{
     return this.http.get(`http://localhost:3000/products/${id}`);
   }
 
-  isUser():Boolean {
+  isUser():boolean {
     let user = localStorage.getItem("loginForm");
 
     if (user) {
+      return true;      
+    } else {
+      return false;
+    }
+  }
+
+  isAdmin():boolean {
+    let userData = JSON.parse(localStorage.getItem("loginForm") || '{}')
+
+    if (userData.position == 'admin') {
       return true;      
     } else {
       return false;
