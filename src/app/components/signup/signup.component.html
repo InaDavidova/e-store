@@ -1,3 +1,7 @@
+<main class="bg-[url('https://www.iriworldwide.com/IRI/media/Library/Technology/IRISolutionsTechnolgoyHeaderMobile800x500_r15_082218.jpg')] bg-no-repeat bg-cover">
+  <div class="w-full min-h-screen bg-[rgba(182,255,255,0.7)] flex flex-col px-20 py-7 items-center">
+
+
 <div class="container mt-8 sm:mx-auto sm:w-full sm:max-w-md min-h-[75vh]">
     <div class="card  bg-slate-200 py-3.5 pb-7 mb-8 px-15 shadow rounded-lg sm:px-10 "> <!--grid items-center justify-center p-10 rounded-md -->
       <div class="text-center">
@@ -9,6 +13,11 @@
             <div class="mb-6">
                 <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-900">Name</label>
                 <input formControlName="name" type="text" id="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                <div *ngIf="signupForm.get('name')?.errors && signupForm.get('name')?.touched">
+                  <span class="invalid-feedback" *ngIf="signupForm.get('name')?.errors?.['required']">Name is required</span>
+                  <span class="invalid-feedback" *ngIf="signupForm.get('name')?.errors?.['minlength']">Name must be at least 3 characters</span>
+                  <span class="invalid-feedback" *ngIf="signupForm.get('name')?.errors?.['forbiddenName']">Name not allowed</span>
+                </div>
               </div>
               <div class="mb-6">
                 <label for="email"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-900">Your email</label>
@@ -18,12 +27,13 @@
                 [ngClass]="{'is-invalid':signupForm.get('email')?.errors && signupForm.get('email')?.touched}" 
                 [formControl]="emailFormControl"
                 ngModel 
+                required
                 >
                <!--
                doesn't work with ngModel
                   [formControl]="emailFormControl"
              -->
-             <span class="invalid-feedback" *ngIf="!signupForm.get('email')?.valid && signupForm.get('email')?.touched">Can you enter a valid email now?</span> 
+             <span class="invalid-feedback" *ngIf="!signupForm.get('email')?.valid && signupForm.get('email')?.touched">Can you enter a valid and not used email now?</span> 
        <!--   {{signupForm.get('email')?.errors | json}} -->
               </div>
               <div class="mb-6">
@@ -46,3 +56,6 @@
       </form>
     </div>
   </div>
+
+</div>
+</main>

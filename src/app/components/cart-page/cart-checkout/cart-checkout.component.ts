@@ -17,7 +17,8 @@ export class CartCheckoutComponent implements OnInit {
   total: number = 0
   ngOnInit(): void {
     this.list = this.cart.placeholder
-    this.total = this.cart.getTotalPrice();
+    this.total = this.cart.getTotalPrice()
+    localStorage.setItem('total_price', this.total.toString())
   }
 
   onSubmit(item: TCheckout) {

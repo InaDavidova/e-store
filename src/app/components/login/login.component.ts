@@ -63,7 +63,6 @@ export class LoginComponent implements OnInit {
    
       if (user) {
        this.isLoading = false;
-        alert('login success');
 
         const userData = {
           email: user.email,
@@ -71,6 +70,7 @@ export class LoginComponent implements OnInit {
         }
         
         localStorage.setItem("loginForm",JSON.stringify(userData));
+
         this.loginForm.reset();
         this.router.navigate(['home']);
       
