@@ -24,12 +24,6 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
 
- //  localStorage.setItem("id", "num");
-
- //  this.loginForm = this.formBuilder.group({
-   //   email:[""],
-  //    password:[""]
-  //  })
 
     this.loginForm = new FormGroup({
       email: new FormControl(''),
@@ -39,15 +33,7 @@ export class LoginComponent implements OnInit {
   
 
   
-/*
-  login(){
-    this.api.login()
-    .subscribe((res: FormGroup)=>{
-      this.loginForm = res;
-    })
-    
-    }
-    */
+
   }
   
   

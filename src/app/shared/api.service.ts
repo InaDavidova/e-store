@@ -30,7 +30,6 @@ export class ApiService implements OnInit{
   public loginForm!: FormGroup
   constructor(private formBuilder : FormBuilder, private http : HttpClient, private router: Router) { }
 
-  //constructor(private http: HttpClient) {}
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
