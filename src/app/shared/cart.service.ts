@@ -9,17 +9,13 @@ export class CartService {
   public placeholder: any = this.getCartData()
   public cartItems = new BehaviorSubject([])
   constructor() {
-    const ls = this.getCartData()
-    if (ls) this.cartItems.next(ls)
+    if (this.placeholder) this.cartItems.next(this.placeholder)
   }
 
   addToCart(product: any) {
-    const ls = this.getCartData()
-
-    const products = ls.filter((p: any) => p.id != product.id)
+    const products = this.placeholder.filter((p: any) => p.id != product.id)
     this.placeholder = [...products, product]
-    const newData = [...products, product]
-    this.setCartData(newData)
+    this.setCartData(this.placeholder)
     this.cartItems.next(this.getCartData())
   }
 
