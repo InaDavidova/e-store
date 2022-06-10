@@ -10,7 +10,6 @@ export class FilterMenuComponent implements OnInit {
   @Input() brands!:Set<string>;
   @Input() colors!:Set<string>;
   @Output() find = new EventEmitter<any>();
-  // @Input('ngModel') model: any;
     
   constructor() { }
 
