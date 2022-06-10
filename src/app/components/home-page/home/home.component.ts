@@ -81,6 +81,5 @@ export class HomeComponent implements OnInit {
     }
 
     this.list = filteredData;
-    console.log(filteredData);
   }
 }
