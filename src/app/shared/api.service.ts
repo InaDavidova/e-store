@@ -16,7 +16,7 @@ export type TProduct = {
     battery: string,
     rom: string,
     ram: string,
-    priceEuro: number,
+    priceEuro: string,
     picUrl: string,
     camera: string
 }

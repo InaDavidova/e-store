@@ -21,6 +21,7 @@ export class CheckoutListComponent implements OnInit {
     this.check.getCheckout().subscribe(data => {
       this.list = data
       this.count = this.list.length
+      
     })
   }
 

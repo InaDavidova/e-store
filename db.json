@@ -129,13 +129,18 @@
     },
     {
       "id": 4,
+<<<<<<< HEAD
       "name": "ivanstoil",
+=======
+      "name": "Ivan",
+>>>>>>> 331a64ea0ead511f2591f0686d3dd308e077c4d4
       "email": "iva@gmail.com",
       "password": "pass4",
       "position": "user"
     },
     {
       "id": 5,
+<<<<<<< HEAD
       "name": "name",
       "email": "email@dd",
       "password": "ss",
@@ -147,6 +152,12 @@
       "password": "pass",
       "confirmPassword": "pass",
       "id": 6
+=======
+      "name": "Alice",
+      "email": "alice_wonder@gmail.com",
+      "password": "asd",
+      "position": "user"
+>>>>>>> 331a64ea0ead511f2591f0686d3dd308e077c4d4
     }
   ],
   "checkout": [
@@ -154,56 +165,27 @@
       "country": "BG",
       "address": "Люлин 1",
       "phone": "0884452721",
-      "items": "Galaxy S10",
-      "price": 884,
-      "count": 1,
-      "user": "gub99@gmail.com",
-      "id": 1
-    },
-    {
-      "country": "UA",
-      "address": "Kyiv",
-      "phone": "0884452721",
-      "items": "Galaxy S10",
-      "price": 884,
-      "count": 1,
-      "user": "gub99@gmail.com",
-      "id": 2
-    },
-    {
-      "country": "BG",
-      "address": "Люлин 1",
-      "phone": "0884452721",
-      "items": "Pixel 6",
-      "price": 1158,
-      "count": 1,
-      "user": "gub99@gmail.com",
-      "id": 3
-    },
-    {
-      "country": "BG",
-      "address": "Люлин 1",
-      "phone": "0884452721",
-      "items": "Galaxy S10",
-      "price": 1768,
-      "count": 1,
+      "items": "Pixel 6,iPhone",
+      "price": 3036,
+      "count": 2,
       "user": {
         "email": "gub99@gmail.com",
         "position": "admin"
       },
-      "id": 4
+      "id": 1
     },
     {
-      "country": "UA",
+      "country": "BG",
       "address": "Люлин 1",
       "phone": "0884452721",
-      "items": "Galaxy S10",
-      "price": 1768,
-      "count": 1,
+      "items": "iPhone,P50 Pro,Galaxy S10",
+      "price": 8655,
+      "count": 3,
       "user": {
-        "email": "alice@abv.bg"
+        "email": "gub99@gmail.com",
+        "position": "admin"
       },
-      "id": 5
+      "id": 2
     }
   ]
 }
