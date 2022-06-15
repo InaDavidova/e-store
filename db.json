@@ -129,17 +129,24 @@
     },
     {
       "id": 4,
-      "name": "ivan",
+      "name": "ivanstoil",
       "email": "iva@gmail.com",
       "password": "pass4",
       "position": "user"
     },
     {
       "id": 5,
-      "name": "Alice",
-      "email": "alice@abv.bg",
-      "password": "asd",
-      "position": "user"
+      "name": "name",
+      "email": "email@dd",
+      "password": "ss",
+      "position": "sss"
+    },
+    {
+      "name": "vasil",
+      "email": "pravdo00@gmail.com1",
+      "password": "pass",
+      "confirmPassword": "pass",
+      "id": 6
     }
   ],
   "checkout": [
