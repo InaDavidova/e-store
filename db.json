@@ -9,7 +9,7 @@
       "battery": "3 400 mAh",
       "rom": "128 GB",
       "ram": "8 GB",
-      "priceEuro": 884,
+      "priceEuro": "884",
       "picUrl": "https://cdn.alloallo.media/catalog/product/samsung/galaxy-s/galaxy-s10/galaxy-s10-prism-black.jpg",
       "camera": "16 MP"
     },
@@ -22,20 +22,20 @@
       "battery": "4 614 mAh",
       "rom": "128 GB",
       "ram": "8 GB",
-      "priceEuro": 579,
+      "priceEuro": "579",
       "picUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZBBZ7wmP6lzGx6v473GqqgFjAUbSjh1EQ5GQAAwuSQMUj129cBs0NM7B-AvlvcP4YklU&usqp=CAU",
       "camera": "50 MP"
     },
     {
       "id": 3,
-      "model": "iPhone",
+      "model": "iPhone 13",
       "manufacturer": "Apple",
       "color": "pink",
       "displaySize": "6.1",
       "battery": "3 240 mAh",
       "rom": "128 GB",
       "ram": "4 GB",
-      "priceEuro": 819,
+      "priceEuro": "819",
       "picUrl": "https://s13emagst.akamaized.net/products/40685/40684413/images/res_16a3a662e1b74dd715c857686c585cd7.jpg",
       "camera": "12 MP"
     },
@@ -48,12 +48,25 @@
       "battery": "4 360 mAh",
       "rom": "128 GB",
       "ram": "8 GB",
-      "priceEuro": 889,
+      "priceEuro": "889",
       "picUrl": "https://www.a1.bg/public/file/id/1d5ae20d6b393f0bfbc32ff4420c0e29/p50-pro-black.png",
       "camera": "50 MP"
     },
     {
       "id": 5,
+      "model": "Galaxy Z Fold3",
+      "manufacturer": "Samsung",
+      "color": "black",
+      "displaySize": "7.6",
+      "battery": "4 400 mAh",
+      "rom": "512 GB",
+      "ram": "12 GB",
+      "priceEuro": "1094",
+      "picUrl": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQijwe6JQwROsSc79zW5W1RoBz8rqIVkRL7_HS-L31IymlAZ-eIg_Dx_pKgO5eNXrah4Ve8-HcW5yFpWvArsSIwfCJNo8jQz9REib2a0QSx&usqp=CAE",
+      "camera": "12 MP"
+    },
+    {
+      "id": 6,
       "model": "Galaxy Note 20",
       "manufacturer": "Samsung",
       "color": "blue",
@@ -61,9 +74,35 @@
       "battery": "4 300 mAh",
       "rom": "256 GB",
       "ram": "8 GB",
-      "priceEuro": 1260,
+      "priceEuro": "1260",
       "picUrl": "https://domarket.com.ng/wp-content/uploads/2020/10/Samsung393117Pic11.jpg",
       "camera": "64 MP"
+    },
+    {
+      "id": 7,
+      "model": "iPhone 11",
+      "manufacturer": "Apple",
+      "color": "purple",
+      "displaySize": "6.1",
+      "battery": "3 110 mAh",
+      "rom": "64 GB",
+      "ram": "4 GB",
+      "priceEuro": "549",
+      "picUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj7Jhu5QPUHexHn_Ph9DyTeSB2FdlHDPkLQw&usqp=CAU",
+      "camera": "12 MP"
+    },
+    {
+      "id": 8,
+      "model": "Mate 40 Pro",
+      "manufacturer": "Huawei",
+      "color": "silver",
+      "displaySize": "6.76",
+      "battery": "4 400 mAh",
+      "rom": "256 GB",
+      "ram": "8 GB",
+      "priceEuro": "807",
+      "picUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIMNPTB-EBtK74fv_I-G1bTxj95VwI-zyZEutTHfBLHNspcHEjaxQy2U7qsj-WiP3prgU&usqp=CAU",
+      "camera": "50 MP"
     }
   ],
   "users": [
@@ -90,9 +129,16 @@
     },
     {
       "id": 4,
-      "name": "ivan",
+      "name": "Ivan",
       "email": "iva@gmail.com",
       "password": "pass4",
+      "position": "user"
+    },
+    {
+      "id": 5,
+      "name": "Alice",
+      "email": "alice_wonder@gmail.com",
+      "password": "asd",
       "position": "user"
     }
   ],
@@ -101,44 +147,27 @@
       "country": "BG",
       "address": "Люлин 1",
       "phone": "0884452721",
-      "items": "Galaxy S10",
-      "price": 884,
-      "count": 1,
-      "user": "gub99@gmail.com",
+      "items": "Pixel 6,iPhone",
+      "price": 3036,
+      "count": 2,
+      "user": {
+        "email": "gub99@gmail.com",
+        "position": "admin"
+      },
       "id": 1
     },
     {
-      "country": "UA",
-      "address": "Kyiv",
+      "country": "BG",
+      "address": "Люлин 1",
       "phone": "0884452721",
-      "items": "Galaxy S10",
-      "price": 884,
-      "count": 1,
-      "user": "gub99@gmail.com",
+      "items": "iPhone,P50 Pro,Galaxy S10",
+      "price": 8655,
+      "count": 3,
+      "user": {
+        "email": "gub99@gmail.com",
+        "position": "admin"
+      },
       "id": 2
-    },
-    {
-      "country": "BG",
-      "address": "Люлин 1",
-      "phone": "0884452721",
-      "items": "Pixel 6",
-      "price": 1158,
-      "count": 1,
-      "user": "gub99@gmail.com",
-      "id": 3
-    },
-    {
-      "country": "BG",
-
-   
-      "address": "Люлин 1",
-      "phone": "0884452721",
-      "items": "Pixel 6",
-      "price": 2895,
-      "count": 1,
-      "user": "iva@gmail.com",
-
-      "id": 4
     }
   ]
 }

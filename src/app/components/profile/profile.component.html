@@ -9,8 +9,7 @@
             <button (click)="clickAddUser()" type="button" (click)="toggleModal()" class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5  text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Add user</button>
             <button routerLink="/purchases"type="button" class="mt-2 text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5  text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">List of purchases</button>
           </div>
-        <div class=" flex items-center flex-col"> <!--table-auto flex items-center justify-center  flex-col mt-5  rounded-lg shadow card bg-slate-200 py-7  mb-8  -->
-          <!--rounded-lg shadow card bg-slate-200 py-7  mb-8 mt-5 ;;; px-20 justify-items-stretch-->
+        <div class=" flex items-center flex-col">
           <table class=" shadow-2xl font-[Poppins] border-2 border-cyan-200 w-6/12 overflow-hidden py-7  mb-8 mt-5">
                 <thead class="text-white ">
                     <tr>
@@ -26,7 +25,7 @@
                 <tbody class="text-black-900 text-center">
                   <tr *ngFor = 'let row of profileData' class="bg-gradient-to-r from-indigo-300 to-blue-500 hover:bg-cyan-100 hover:scale-105 cursor-pointer duration-300 "> 
                     <td class="py-3 px-6">{{row.id}}</td>
-                    <td  class="py-3 px-6">{{row.name}} </td> <!-- {row.name}-->
+                    <td  class="py-3 px-6">{{row.name}} </td> 
                     <td  class="py-3 px-6">{{row.email}}</td>
                     <td  class="py-3 px-6">{{row.password}}</td>
                     <td class="py-3 px-6">{{row.position}}</td>
@@ -85,10 +84,10 @@
         <button id="cancel" class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" (click)="toggleModal()">
           Close
         </button>
-        <button *ngIf="showAdd" class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" (click) =" postProfileDetails()" > <!--(click)="toggleModal()"-->
+        <button *ngIf="showAdd" class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" (click) =" postProfileDetails()" > 
           Add
         </button>
-        <button *ngIf="showUpdate" class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" (click) =" updateProfileDetails()" > <!--(click)="toggleModal()"-->
+        <button *ngIf="showUpdate" class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" (click) =" updateProfileDetails()" > 
           Update
         </button>
       </div>

@@ -8,7 +8,7 @@ export class CartService {
 
   public placeholder: any = this.getCartData()
   public cartItems = new BehaviorSubject([])
-  constructor() { 
+  constructor() {
     const ls = this.getCartData()
     if (ls) this.cartItems.next(ls)
   }
@@ -24,15 +24,28 @@ export class CartService {
   }
 
   setCartData(data: any) {
-    localStorage.setItem('cart', JSON.stringify(data)) // TODO: try/catch block
+    try {
+      localStorage.setItem('cart', JSON.stringify(data))
+    } catch (error) {
+      console.error(error);
+    }
+
   }
 
   getCartData() {
-    return JSON.parse(localStorage.getItem('cart') || '[]') // TODO: try/catch block
+    try {
+      return JSON.parse(localStorage.getItem('cart') || '[]')
+    } catch (error) {
+      console.error(error);
+    }
   }
 
-  getLocalUser(){
-    return JSON.parse(localStorage.getItem('loginForm') || '{}') // TODO: try/catch
+  getLocalUser() {
+    try {
+      return JSON.parse(localStorage.getItem('loginForm') || '{}')
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   getProducts(): Observable<any[]> {
@@ -47,14 +60,13 @@ export class CartService {
     let totalPrice = 0
     this.placeholder.forEach((a: any) => {
       totalPrice += a.priceEuro * a.qty
-      })
+    })
     return totalPrice
   }
 
   deleteCartItem(product: any) {
     let index = this.placeholder.indexOf(product)
     this.placeholder.splice(index, 1)
-    console.log(this.placeholder);
     this.setCartData(this.placeholder)
     this.cartItems.next(this.getCartData())
   }

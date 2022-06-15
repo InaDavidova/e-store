@@ -24,32 +24,12 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
 
- //  localStorage.setItem("id", "num");
-
- //  this.loginForm = this.formBuilder.group({
-   //   email:[""],
-  //    password:[""]
-  //  })
 
     this.loginForm = new FormGroup({
       email: new FormControl(''),
       password: new FormControl('')
     });
-
-  
-
-  
-/*
-  login(){
-    this.api.login()
-    .subscribe((res: FormGroup)=>{
-      this.loginForm = res;
-    })
-    
-    }
-    */
   }
-  
   
   login(){
     this.isLoading = true;
@@ -57,18 +37,17 @@ export class LoginComponent implements OnInit {
     .subscribe(res=>{
       const user = res.find((a:any)=>{
         return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
-       
       });
-     
-   
+  
       if (user) {
        this.isLoading = false;
-        //alert('login success');
-        localStorage.setItem("loginForm",JSON.stringify(this.loginForm.value.email));
+        const userData = {
+          email: user.email,
+          position: user.position
+        }  
+        localStorage.setItem("loginForm",JSON.stringify(userData));
         this.loginForm.reset();
-        this.router.navigate(['home']);
-      
-       
+        this.router.navigate(['home']);   
       } else{
         this.isLoading = false;
         alert('user not found');

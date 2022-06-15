@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService, TList, TProduct } from 'src/app/shared/api.service';
+import { ApiService, TList } from 'src/app/shared/api.service';
 
 @Component({
   selector: 'app-home',
@@ -81,6 +81,5 @@ export class HomeComponent implements OnInit {
     }
 
     this.list = filteredData;
-    console.log(filteredData);
   }
 }

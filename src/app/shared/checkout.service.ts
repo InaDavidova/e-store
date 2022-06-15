@@ -1,8 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { ApiService } from './api.service';
 import { CartService } from './cart.service';
 
 export type TList = TCheckout[];
@@ -27,9 +25,6 @@ export class  CheckoutService {
 
   addCheckout(item: TCheckout){
     
-    setTimeout(() => {
-      console.log("Delayed for 3 seconds.");
-    }, 3000)
     let tmp = this.cart.getCartData()
     item.items = tmp.map((product:any) => product.model).toString();
     item.price = this.cart.getTotalPrice()
@@ -49,12 +44,4 @@ export class  CheckoutService {
     
     return this.http.delete(deleteEndpoint)
   }
-
-  // getTotalPrice(){
-  //   return JSON.parse(localStorage.getItem('toal_price') || '')
-  // }
-
-  // setTotalPrice(data: number){
-  //   return localStorage.setItem('cart', JSON.stringify(data))
-  // }
 }

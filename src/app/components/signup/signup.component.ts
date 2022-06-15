@@ -4,9 +4,7 @@ import { FormGroup, FormBuilder, NgForm, Validators, FormControl } from '@angula
 import { Router } from '@angular/router';
 import { CustomValidationService } from 'src/app/services/custom-validation.service';
 import { forbidenNameValidator } from 'src/app/shared/name.validator.';
-//import { RegisterValidators } from '../validators/register-validators';
-//import {EmailService} from '../../services/email.service';
-//import { ApiService} from '../../shared/api.service'
+
 
 @Component({
   selector: 'app-signup',
@@ -32,15 +30,14 @@ export class SignupComponent implements OnInit {
     private http : HttpClient, 
     private router: Router,
     private customValidator: CustomValidationService,
-  ) { }  // private emailService:EmailService
+  ) { } 
 
   ngOnInit(): void {
     this.signupForm = this.formBuilder.group({
       name:["", [Validators.minLength(3), Validators.required, forbidenNameValidator(/password/)]],
-      email:["", this.customValidator.validateEmail.bind(this.customValidator),this.customValidator.validateEmaileNotTaken.bind(this.customValidator) ,[Validators.required]],  //,this.customValidator.validateEmaileNotTaken.bind(this.customValidator)
+      email:["", this.customValidator.validateEmail.bind(this.customValidator),this.customValidator.validateEmaileNotTaken.bind(this.customValidator) ,[Validators.required]], 
       password:[""],
       confirmPassword:['']
-     // position:[""]  [RegisterValidators.match],
     }, 
       {
         validator: this.customValidator.passwordMatchValidator(
@@ -76,8 +73,6 @@ export class SignupComponent implements OnInit {
 
     this.http.post<any>("http://localhost:3000/users", this.signupForm.value)
     .subscribe(res=>{
-    //  alert("Signup successful");
-     
       this.signupForm.reset();
       this.router.navigate(['login']);
     }, err=>{

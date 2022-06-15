@@ -77,38 +77,6 @@ export class CustomValidationService {
       }, false)
       
      ); 
-
-
-/*
-validateEmaileNotTaken(control: AbstractControl) {
-  console.log(control.value);
-  return this.checkEmailNotTaken(control.value).pipe(
-    map(res => {
-      console.log(res);
-      return !res ? null : { emailTaken: true };
-    })
-  );
-}
-     checkEmailNotTaken(email: string): any {
-       let isValid = false;
-       this.http.get("http://localhost:3000/users").pipe(
-        map((el: any) => {
-          console.log(el);
-          if(el.email === email){
-            isValid = true;
-          }
-          console.log(el.email);
-        }
-        )
-      );
-        return isValid;
-      
-          
-       //   console.log(email, users.email, acc)
-        
-         
-      }
-      */
       
  }
 
